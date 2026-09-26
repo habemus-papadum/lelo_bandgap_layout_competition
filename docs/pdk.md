@@ -10,7 +10,8 @@ that open_pdks can build. Sky130B is a different variant and is not included.
 The Sky130A tree contains 4,125 files, totalling 469,372,636 bytes (about 448 MiB;
 457 MiB of allocated disk space on the original machine). With support scripts,
 the verified snapshot has 4,169 files. The largest file is about 71 MB. Git's
-compressed transfer size is smaller than the checked-out size.
+compressed transfer size is smaller than the checked-out size; the initial
+PDK push transferred a 75.41 MiB Git pack.
 
 ## Default and overrides
 
@@ -58,7 +59,9 @@ eval "$(uv run bandgap env)"
 eval "$(uv run bandgap env --pdk-root /some/other/pdk-directory)"
 ```
 
-This sets `PDK_ROOT` and `BANDGAP_ROOT`. Then use the EDA executables directly:
+This sets `PDK_ROOT` and `BANDGAP_ROOT`. The commands below assume the EDA
+executables are on PATH; otherwise use their absolute executable paths. Local
+YAML tool paths are used by the CLI, not automatically added to your shell PATH.
 
 ```sh
 magic -rcfile "$BANDGAP_ROOT/magicrc" "$BANDGAP_ROOT/submissions/attempt-01/LELOTEMP_BIAS_IBP.mag"

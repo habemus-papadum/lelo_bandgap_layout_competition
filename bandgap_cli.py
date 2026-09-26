@@ -98,11 +98,14 @@ for name, description in {
 @app.command()
 def netlist(
     pdk_root: Annotated[Path | None, typer.Option(help="Directory containing sky130A; defaults to configured/bundled PDK.")] = None,
-    xschem: Annotated[str, typer.Option(help="Xschem executable or absolute path.")] = "xschem",
+    xschem: Annotated[str | None, typer.Option(help="Xschem executable; defaults to local tool configuration or PATH.")] = None,
     output_dir: Annotated[Path, typer.Option(help="Generated views; canonical schematic files are not overwritten.")] = ROOT / "runs/netlist",
 ) -> None:
     """Regenerate both schematic SPICE views with Xschem."""
-    args = ["--xschem", xschem, "--output-dir", str(output_dir)]
+    executable = xschem or project.local_settings().get("tools", {}).get("xschem", "xschem")
+    if "/" in executable:
+        executable = str(project.project_path(executable))
+    args = ["--xschem", executable, "--output-dir", str(output_dir)]
     selected = project.pdk_root(pdk_root)
     typer.echo(f"Schematic: {ROOT / 'schematic'} | PDK: {selected}", err=True)
     args += ["--pdk-root", str(selected)]

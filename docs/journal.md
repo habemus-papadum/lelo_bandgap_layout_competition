@@ -429,3 +429,8 @@ PDK rather than trim libraries or require another download.
 - Kept PDK data out of the generated Pages artifact; it is available from the
   ordinary Git checkout. The site contains participant setup, direct-tool and
   submission guides plus the existing technical and historical documentation.
+
+The full PDK push succeeded as ordinary Git data (75.41 MiB transferred).
+Hosted CLI tests, strict documentation build and Pages deployment passed.
+A final configuration check also verified that netlist regeneration honors
+the local Xschem executable setting, matching the evaluator tool settings.

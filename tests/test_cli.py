@@ -92,6 +92,10 @@ class CLIContract(unittest.TestCase):
             result = self.runner.invoke(app, ['netlist', '--pdk-root', '/pdk', '--xschem', '/eda/xschem'])
             self.assertEqual(result.exit_code, 0, result.output)
             self.assertIn(str(ROOT/'schematic/netlist.py'), call.call_args.args[0])
+            with patch('project.local_settings', return_value={'tools': {'xschem': '/configured/xschem'}}):
+                result = self.runner.invoke(app, ['netlist'])
+                self.assertEqual(result.exit_code, 0, result.output)
+                self.assertIn('/configured/xschem', call.call_args.args[0])
             result = self.runner.invoke(app, ['acceptance', '--keep'])
             self.assertEqual(result.exit_code, 0, result.output)
             self.assertEqual(call.call_args.args[0], [sys.executable, str(ROOT/'tests/acceptance.py'), '--keep'])

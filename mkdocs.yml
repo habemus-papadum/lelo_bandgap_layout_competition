@@ -1,0 +1,106 @@
+site_name: LELO bandgap layout competition
+site_description: A transparent, reproducible Sky130 layout competition
+site_url: https://habemus-papadum.github.io/lelo_bandgap_layout_compeititon/
+repo_url: https://github.com/habemus-papadum/lelo_bandgap_layout_compeititon
+repo_name: habemus-papadum/lelo_bandgap_layout_compeititon
+docs_dir: .docs-build
+site_dir: site
+hooks:
+  - scripts/docs_hook.py
+watch:
+  - README.md
+  - docs
+  - LICENSES
+  - testbenches
+  - cells
+  - schematic
+  - tools
+  - competition.yaml
+  - bandgap_cli.py
+theme:
+  name: material
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+extra_javascript:
+  - docs/assets/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+validation:
+  nav:
+    omitted_files: warn
+  links:
+    not_found: warn
+    unrecognized_links: warn
+    anchors: warn
+nav:
+  - Start here:
+      - Overview: index.md
+      - First run: docs/getting-started.md
+      - CLI guide: docs/cli.md
+  - Competition:
+      - Circuit and interface: docs/design.md
+      - Rules and scoring: docs/evaluation.md
+      - Reusable cell catalog: docs/cells.md
+  - Reference and evidence:
+      - Results and timings: docs/reference-results.md
+      - Editable testbenches: testbenches/README.md
+      - RC extraction and limitations: docs/rc-validation.md
+      - Acceptance checks: docs/acceptance.md
+  - Development:
+      - uv, documentation and CI: docs/development.md
+  - History and provenance:
+      - Packaging record: docs/packaging.md
+      - Missing dependency investigation: docs/dependency-resolution.md
+      - Original extraction plan: docs/extraction-plan.md
+      - Work journal: docs/journal.md
+      - Imported design attribution: LICENSES/ATTRIBUTION.md

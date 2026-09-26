@@ -1,0 +1,13 @@
+# Standalone schematic libraries. PDK_ROOT is the directory containing sky130A.
+if {![info exists env(PDK_ROOT)]} {error "Set PDK_ROOT to the directory containing sky130A"}
+set bandgap_root [file dirname [file dirname [file normalize [info script]]]]
+set pdk_xschem [file join $env(PDK_ROOT) sky130A libs.tech xschem]
+if {![file exists [file join $pdk_xschem xschemrc]]} {error "Missing Sky130A Xschem setup in $pdk_xschem"}
+source [file join $pdk_xschem xschemrc]
+# Reset user/global search paths to ensure this project's closure is sufficient.
+set XSCHEM_LIBRARY_PATH [join [list ${XSCHEM_SHAREDIR}/xschem_library $pdk_xschem [file join $bandgap_root schematic] [file join $bandgap_root cells]] :]
+set bus_replacement_char {<>}
+set netlist_type spice
+set ngspice_netlist 1
+set top_is_subckt 1
+set netlist_dir [file join $bandgap_root runs netlist]

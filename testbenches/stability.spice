@@ -1,0 +1,41 @@
+Bandgap loop stability: two-injection return ratio at LPI/LPO
+.lib "@PDK_MODELS@" @CORNER@
+.include "@DUT@"
+.option TNOM=27 GMIN=1e-15 reltol=1e-3
+.options klu
+.temp @TEMP@
+VDD vdd 0 dc @SUPPLY@
+VEN en 0 dc @SUPPLY@
+VENB enb 0 dc 0
+V0 o0 0 dc 0.5
+V1 o1 0 dc 0.6
+V2 o2 0 dc 0.7
+V3 o3 0 dc 0.8
+XDUT vdd lpi o3 o2 o1 o0 lpo vd1 en 0 enb @TOP@
+* Ideal probe leaves DC connectivity intact. Numerical method: Tian et al.,
+* "Striving for Small-Signal Stability", IEEE Circuits and Devices, Jan. 2001.
+* Same three-source probe/equation as the original project's tian_subckt.lib.
+.subckt loop_probe a b
+Ii 0 x dc 0 ac 0
+Vi x a dc 0 ac 1
+Vbuffer b x dc 0
+.ends loop_probe
+X999 lpi lpo loop_probe
+.control
+set num_threads=1
+set wr_singlescale
+set wr_vecnames
+optran 0 0 0 10n 20u 0
+op
+ac dec 50 1 1G
+alter i.X999.Ii acmag=1
+alter v.X999.Vi acmag=0
+ac dec 50 1 1G
+let denominator = 2*(ac1.i(v.X999.Vi)*ac2.v(X999.x)-ac1.v(X999.x)*ac2.i(v.X999.Vi))+ac1.v(X999.x)+ac2.i(v.X999.Vi)
+let loopgain = 1/(1-1/denominator)
+let gain_db = db(loopgain)
+let phase_deg = 180*cph(loopgain)/pi
+wrdata stability.dat gain_db phase_deg
+quit
+.endc
+.end

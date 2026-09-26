@@ -1,0 +1,9 @@
+# Copy to tools.local.yaml. Relative paths resolve from this project directory.
+# pdk_root contains sky130A/; it is NOT sky130A itself.
+pdk_root: ~/opt/pdk/share/pdk
+tools:
+  magic: magic
+  netgen: netgen
+  ngspice: ngspice
+  xschem: xschem
+timeout_s: 180

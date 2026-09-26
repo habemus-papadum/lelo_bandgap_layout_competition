@@ -1,0 +1,24 @@
+[project]
+name = "lelo-bandgap-layout-competition"
+version = "0.1.0"
+description = "Standalone Sky130 bandgap layout competition and transparent evaluator"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6,<7", "typer>=0.16,<1"]
+
+[project.scripts]
+bandgap = "bandgap_cli:app"
+
+[project.urls]
+Repository = "https://github.com/habemus-papadum/lelo_bandgap_layout_compeititon"
+Documentation = "https://habemus-papadum.github.io/lelo_bandgap_layout_compeititon/"
+
+[dependency-groups]
+docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.6,<10", "pymdown-extensions>=10,<11"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["bandgap_cli"]

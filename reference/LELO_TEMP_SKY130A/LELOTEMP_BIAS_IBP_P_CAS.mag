@@ -1,0 +1,180 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1786831200
+<< checkpaint >>
+rect 0 0 1600 11360
+<< locali >>
+rect 996 4880 1056 5680
+rect 996 4880 1056 6480
+rect 996 4880 1056 7280
+rect 996 4880 1056 8080
+rect 996 4880 1056 8880
+rect 996 4880 1056 9680
+rect 996 4880 1056 10480
+rect 480 4720 540 5520
+rect 480 4720 540 6320
+rect 480 4720 540 7120
+rect 480 4720 540 7920
+rect 480 4720 540 8720
+rect 480 4720 540 9520
+rect 480 4720 540 10320
+rect 1118 1720 1182 1888
+rect 1118 2520 1182 2688
+rect 1118 3320 1182 3488
+rect 1118 4120 1182 4288
+rect 1118 920 1182 1088
+rect 1118 4920 1182 5088
+rect 1118 5720 1182 5888
+rect 1118 6520 1182 6688
+rect 1118 7320 1182 7488
+rect 1118 8120 1182 8288
+rect 1118 8920 1182 9088
+rect 1118 9720 1182 9888
+rect 1118 10520 1182 10688
+rect 480 4680 540 10360
+rect 1122 920 1182 10600
+rect 480 1480 928 1560
+rect 480 2280 928 2360
+rect 480 3080 928 3160
+rect 480 3880 928 3960
+rect 608 1640 1056 1720
+rect 608 2440 1056 2520
+rect 608 3240 1056 3320
+rect 608 4040 1056 4120
+rect 480 4680 928 4760
+rect 480 680 928 760
+rect 1120 1720 1184 1800
+rect 608 4840 1056 4920
+rect -96 10440 96 10520
+rect 608 840 1056 920
+<< viali >>
+rect 1124 1732 1176 1784
+rect 1124 1824 1176 1876
+rect 1124 2532 1176 2584
+rect 1124 2624 1176 2676
+rect 1124 3332 1176 3384
+rect 1124 3424 1176 3476
+rect 1124 4132 1176 4184
+rect 1124 4224 1176 4276
+rect 1124 932 1176 984
+rect 1124 1024 1176 1076
+rect 1124 4932 1176 4984
+rect 1124 5024 1176 5076
+rect 1124 5732 1176 5784
+rect 1124 5824 1176 5876
+rect 1124 6532 1176 6584
+rect 1124 6624 1176 6676
+rect 1124 7332 1176 7384
+rect 1124 7424 1176 7476
+rect 1124 8132 1176 8184
+rect 1124 8224 1176 8276
+rect 1124 8932 1176 8984
+rect 1124 9024 1176 9076
+rect 1124 9732 1176 9784
+rect 1124 9824 1176 9876
+rect 1124 10532 1176 10584
+rect 1124 10624 1176 10676
+<< metal1 >>
+rect 1118 1720 1186 1896
+rect 1118 2520 1186 2696
+rect 1118 3320 1186 3496
+rect 1118 4120 1186 4296
+rect 1118 920 1186 1096
+rect 1118 4920 1186 5096
+rect 1118 5720 1186 5896
+rect 1118 6520 1186 6696
+rect 1118 7320 1186 7496
+rect 1118 8120 1186 8296
+rect 1118 8920 1186 9096
+rect 1118 9720 1186 9896
+rect 1118 10520 1186 10696
+rect 1122 1760 1182 2560
+rect 1122 1760 1182 3360
+rect 1122 1760 1182 4160
+rect 1122 960 1182 1760
+rect 1122 1760 1182 4960
+rect 1122 1760 1182 5760
+rect 1122 1760 1182 6560
+rect 1122 1760 1182 7360
+rect 1122 1760 1182 8160
+rect 1122 1760 1182 8960
+rect 1122 1760 1182 9760
+rect 1122 1760 1182 10560
+use REYATR_PCH_4C1F2 xca4 ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 480
+box 0 480 1600 1280
+use REYATR_PCH_4C1F2 xca2<0> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 1280
+box 0 1280 1600 2080
+use REYATR_PCH_4C1F2 xca2<1> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 2080
+box 0 2080 1600 2880
+use REYATR_PCH_4C1F2 xca2<2> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 2880
+box 0 2880 1600 3680
+use REYATR_PCH_4C1F2 xca2<3> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 3680
+box 0 3680 1600 4480
+use REYATR_PCH_4C1F2 xca5<0> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 4480
+box 0 4480 1600 5280
+use REYATR_PCH_4C1F2 xca5<1> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 5280
+box 0 5280 1600 6080
+use REYATR_PCH_4C1F2 xca5<2> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 6080
+box 0 6080 1600 6880
+use REYATR_PCH_4C1F2 xca5<3> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 6880
+box 0 6880 1600 7680
+use REYATR_PCH_4C1F2 xca5<4> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 7680
+box 0 7680 1600 8480
+use REYATR_PCH_4C1F2 xca5<5> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 8480
+box 0 8480 1600 9280
+use REYATR_PCH_4C1F2 xca5<6> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 9280
+box 0 9280 1600 10080
+use REYATR_PCH_4C1F2 xca5<7> ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 10080
+box 0 10080 1600 10880
+use REYATR_PCH_4CTAPBOT xstack_p_cas_bot ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 0
+box 0 0 1600 480
+use REYATR_PCH_4CTAPTOP xstack_p_cas_top ../../cells/REY_ATR_SKY130A
+transform 1 0 0 0 1 10880
+box 0 10880 1600 11360
+<< labels >>
+flabel locali s 480 1480 928 1560 0 FreeSans 400 0 0 0 IBD<0>
+port 1 nsew signal bidirectional
+flabel locali s 480 2280 928 2360 0 FreeSans 400 0 0 0 IBD<1>
+port 2 nsew signal bidirectional
+flabel locali s 480 3080 928 3160 0 FreeSans 400 0 0 0 IBD<2>
+port 3 nsew signal bidirectional
+flabel locali s 480 3880 928 3960 0 FreeSans 400 0 0 0 IBD<3>
+port 4 nsew signal bidirectional
+flabel locali s 608 1640 1056 1720 0 FreeSans 400 0 0 0 IBP_1U<0>
+port 5 nsew signal bidirectional
+flabel locali s 608 2440 1056 2520 0 FreeSans 400 0 0 0 IBP_1U<1>
+port 6 nsew signal bidirectional
+flabel locali s 608 3240 1056 3320 0 FreeSans 400 0 0 0 IBP_1U<2>
+port 7 nsew signal bidirectional
+flabel locali s 608 4040 1056 4120 0 FreeSans 400 0 0 0 IBP_1U<3>
+port 8 nsew signal bidirectional
+flabel locali s 480 4680 928 4760 0 FreeSans 400 0 0 0 VBD1
+port 9 nsew signal bidirectional
+flabel locali s 480 680 928 760 0 FreeSans 400 0 0 0 VBD2
+port 10 nsew signal bidirectional
+flabel locali s 1120 1720 1184 1800 0 FreeSans 400 0 0 0 VCP
+port 11 nsew signal bidirectional
+flabel locali s 608 4840 1056 4920 0 FreeSans 400 0 0 0 VD1
+port 12 nsew signal bidirectional
+flabel locali s -96 10440 96 10520 0 FreeSans 400 0 0 0 VDD_1V8
+port 13 nsew power bidirectional
+flabel locali s 608 840 1056 920 0 FreeSans 400 0 0 0 VR1
+port 14 nsew signal bidirectional
+<< properties >>
+string FIXED_BBOX 0 0 1600 11360
+<< end >>

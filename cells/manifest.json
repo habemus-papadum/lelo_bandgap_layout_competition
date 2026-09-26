@@ -1,0 +1,615 @@
+{
+  "source_revisions": {
+    "lelo_temp_sky130a": "e439fe6b9351ea47a288847131337f483b2dbfcd",
+    "rey_atr_sky130a": "3742bcc0521d36627485a0c5db2ebef7b428ed2c"
+  },
+  "files": [
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_CAPX1.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_CAPX1.mag",
+      "source_sha256": "38ed8bc9e99294a4b9f4420e79a1ab540929e1f9372dadcbf81c0bc9fa7c3b8a",
+      "sha256": "38ed8bc9e99294a4b9f4420e79a1ab540929e1f9372dadcbf81c0bc9fa7c3b8a"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_CAPX1.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_CAPX1.sch",
+      "source_sha256": "d3d0ad209478b4a89572f083bca5100637bea27cce9bbfc801d752c74ab43cfd",
+      "sha256": "d3d0ad209478b4a89572f083bca5100637bea27cce9bbfc801d752c74ab43cfd"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_CAPX1.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_CAPX1.sym",
+      "source_sha256": "31221b7ea1b6160dccebdabec041327d937cb6d2c90574c4b148c3ad6170ca93",
+      "sha256": "31221b7ea1b6160dccebdabec041327d937cb6d2c90574c4b148c3ad6170ca93"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.mag",
+      "source_sha256": "2ca5f971186398b98d20e7f3411b25195cd85c974b029836bcfb0acec37b65fa",
+      "sha256": "2ca5f971186398b98d20e7f3411b25195cd85c974b029836bcfb0acec37b65fa"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.sch",
+      "source_sha256": "78cba6e88441580f08de472d2fae17080e7eefc734a42fcb65b639516d5fb9ca",
+      "sha256": "78cba6e88441580f08de472d2fae17080e7eefc734a42fcb65b639516d5fb9ca"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4C5F0.mag",
+      "source_sha256": "82e590d3fb603635a5e5f4c85a88d46954cfb0616e1ca982e07f66317172b72a",
+      "sha256": "82e590d3fb603635a5e5f4c85a88d46954cfb0616e1ca982e07f66317172b72a"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4C5F0.sch",
+      "source_sha256": "8ab05d9eafad3ac2aff8491df0bf9e20714cd6c1fc9fcf5ffddfcb9fe6ee6aa1",
+      "sha256": "8ab05d9eafad3ac2aff8491df0bf9e20714cd6c1fc9fcf5ffddfcb9fe6ee6aa1"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4C5F0.sym",
+      "source_sha256": "e32271d7a3816651b995a74cb9b8b7d102e2faa940c69c8a208f5ba9fc1c9821",
+      "sha256": "e32271d7a3816651b995a74cb9b8b7d102e2faa940c69c8a208f5ba9fc1c9821"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.mag",
+      "source_sha256": "4461e35bbb169cb8a3afa258c1506cee86cd06d7f49cda1aed5071b01dcf9ab9",
+      "sha256": "4461e35bbb169cb8a3afa258c1506cee86cd06d7f49cda1aed5071b01dcf9ab9"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.sch",
+      "source_sha256": "8ab05d9eafad3ac2aff8491df0bf9e20714cd6c1fc9fcf5ffddfcb9fe6ee6aa1",
+      "sha256": "8ab05d9eafad3ac2aff8491df0bf9e20714cd6c1fc9fcf5ffddfcb9fe6ee6aa1"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.sym",
+      "source_sha256": "e32271d7a3816651b995a74cb9b8b7d102e2faa940c69c8a208f5ba9fc1c9821",
+      "sha256": "e32271d7a3816651b995a74cb9b8b7d102e2faa940c69c8a208f5ba9fc1c9821"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.mag",
+      "source_sha256": "84e2a4abef04529146229bec9a9f6642d848f824c8ce8a6c06a1a6e2f8aeef75",
+      "sha256": "84e2a4abef04529146229bec9a9f6642d848f824c8ce8a6c06a1a6e2f8aeef75"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.mag",
+      "source_sha256": "30f9e7dd13eb3d597ae807d41c6224d7147d84acf5fef5a2663b9e28f41ce0a6",
+      "sha256": "30f9e7dd13eb3d597ae807d41c6224d7147d84acf5fef5a2663b9e28f41ce0a6"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11C5F0.mag",
+      "source_sha256": "0a8015d7acd043a2d6ed54ba48bb255abde2b2168e500399fd81fe8092a9ec98",
+      "sha256": "0a8015d7acd043a2d6ed54ba48bb255abde2b2168e500399fd81fe8092a9ec98"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11C5F0.sch",
+      "source_sha256": "0d6334e824ec0ebba46aaa873e5bf8faed6dfb27027fef65f0257520b9c5f801",
+      "sha256": "0d6334e824ec0ebba46aaa873e5bf8faed6dfb27027fef65f0257520b9c5f801"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11C5F0.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.mag",
+      "source_sha256": "576301aecfe09f8186d2d5d22eca8ac44056545989c21c207ed8221196385711",
+      "sha256": "576301aecfe09f8186d2d5d22eca8ac44056545989c21c207ed8221196385711"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.sch",
+      "source_sha256": "0d6334e824ec0ebba46aaa873e5bf8faed6dfb27027fef65f0257520b9c5f801",
+      "sha256": "0d6334e824ec0ebba46aaa873e5bf8faed6dfb27027fef65f0257520b9c5f801"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.mag",
+      "source_sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+      "sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.mag",
+      "source_sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+      "sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2C5F0.mag",
+      "source_sha256": "3664143e9e925612bcf587e36f7ad40c3d7965719d9c832fc8d14bc1662b315b",
+      "sha256": "3664143e9e925612bcf587e36f7ad40c3d7965719d9c832fc8d14bc1662b315b"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2C5F0.sch",
+      "source_sha256": "f4fa60e06f5e3d5039db389ba120036b255631221f2d1c1e252613c057b9cb1d",
+      "sha256": "f4fa60e06f5e3d5039db389ba120036b255631221f2d1c1e252613c057b9cb1d"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2C5F0.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.mag",
+      "source_sha256": "8a9621544dea1e79be9a97859c19b60ebbef73dff35283ddcc83b170968cc8bf",
+      "sha256": "8a9621544dea1e79be9a97859c19b60ebbef73dff35283ddcc83b170968cc8bf"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.sch",
+      "source_sha256": "f4fa60e06f5e3d5039db389ba120036b255631221f2d1c1e252613c057b9cb1d",
+      "sha256": "f4fa60e06f5e3d5039db389ba120036b255631221f2d1c1e252613c057b9cb1d"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.mag",
+      "source_sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+      "sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.mag",
+      "source_sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+      "sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C1F2.mag",
+      "source_sha256": "bf3b036ab8da0b96061de2a6a443a5678b74708da6aa5e8cafc28a09277d62e7",
+      "sha256": "bf3b036ab8da0b96061de2a6a443a5678b74708da6aa5e8cafc28a09277d62e7"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C1F2.sch",
+      "source_sha256": "a189fc17c4183f24dfc48c68e31dd0d243894e646f54b462ff3bbb6eb12970bf",
+      "sha256": "a189fc17c4183f24dfc48c68e31dd0d243894e646f54b462ff3bbb6eb12970bf"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C1F2.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.mag",
+      "source_sha256": "94d3247707792bd203adeeb3fec0124622fe4101673ee49b0e5e56759bbb9a4e",
+      "sha256": "94d3247707792bd203adeeb3fec0124622fe4101673ee49b0e5e56759bbb9a4e"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.sch",
+      "source_sha256": "a189fc17c4183f24dfc48c68e31dd0d243894e646f54b462ff3bbb6eb12970bf",
+      "sha256": "a189fc17c4183f24dfc48c68e31dd0d243894e646f54b462ff3bbb6eb12970bf"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C5F0.mag",
+      "source_sha256": "f7decc4696c735888b766b2ae3be7cbc25ce72d6b9536486499a9aa149e2c4d3",
+      "sha256": "f7decc4696c735888b766b2ae3be7cbc25ce72d6b9536486499a9aa149e2c4d3"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C5F0.sch",
+      "source_sha256": "5da7687070e590bd892f8f1c70f59ce3c2270c124077e96c73627ccbe5d3f9a2",
+      "sha256": "5da7687070e590bd892f8f1c70f59ce3c2270c124077e96c73627ccbe5d3f9a2"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C5F0.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.mag",
+      "source_sha256": "a9fcc3b592aeb30dc14df91f57c9b4d2bbdf29ef1037e6c841185131d33c24de",
+      "sha256": "a9fcc3b592aeb30dc14df91f57c9b4d2bbdf29ef1037e6c841185131d33c24de"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.sch",
+      "source_sha256": "5da7687070e590bd892f8f1c70f59ce3c2270c124077e96c73627ccbe5d3f9a2",
+      "sha256": "5da7687070e590bd892f8f1c70f59ce3c2270c124077e96c73627ccbe5d3f9a2"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.sym",
+      "source_sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42",
+      "sha256": "d76bfe7afe391043dbfcad5ba4137d7cf72e5961917c9fadace3d0d254310f42"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.mag",
+      "source_sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+      "sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.mag",
+      "source_sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+      "sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36C2F0.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36C2F0.mag",
+      "source_sha256": "c25397faf3b533857200a5e4913ba3c76ba66b5f0dd0d2b947a80e85546d0cb9",
+      "sha256": "c25397faf3b533857200a5e4913ba3c76ba66b5f0dd0d2b947a80e85546d0cb9"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36C2F0.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36C2F0.sch",
+      "source_sha256": "4fa083c34c0ab221c04b2c9d2243a78dc9eb6155dc1a328b6dc65f4fe0bc856c",
+      "sha256": "4fa083c34c0ab221c04b2c9d2243a78dc9eb6155dc1a328b6dc65f4fe0bc856c"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36C2F0.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36C2F0.sym",
+      "source_sha256": "cbdb53a7a135effd2a3a764cdbea5aef32a750b6efdef5e483235f59ff9bf6da",
+      "sha256": "cbdb53a7a135effd2a3a764cdbea5aef32a750b6efdef5e483235f59ff9bf6da"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.mag",
+      "source_sha256": "5ad2dee25a13e4532de3ae453e482e52641f76bf97e243a9a350363a01006766",
+      "sha256": "5ad2dee25a13e4532de3ae453e482e52641f76bf97e243a9a350363a01006766"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.mag",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.mag",
+      "source_sha256": "d9f86c71fcae4aada9754d8e452aa4923ef96deeb8fb5b04b2f6a4093916809b",
+      "sha256": "d9f86c71fcae4aada9754d8e452aa4923ef96deeb8fb5b04b2f6a4093916809b"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.sch",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.sch",
+      "source_sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986",
+      "sha256": "0eb9e8df0220610a1b8574d5a380f1b99d5b520e804ba98541c7543ea2fde986"
+    },
+    {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.sym",
+      "source": "rey_atr_sky130a/design/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.sym",
+      "source_sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128",
+      "sha256": "9d2520c493201b7bc5020ef1a9ed0ba2b09e68fc2c5be39d0e2c2c067e667128"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.mag",
+      "source_sha256": "78997182281fa647d5d1625a1b0162eb5485e25751a8af149ee3d7eeb9a746df",
+      "sha256": "8d9d6463b8fbee69ee4353c39aca4e253dbc7f133d9a4e6cf70d5c3d8bad4915"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_BIP.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_BIP.mag",
+      "source_sha256": "21e9a65f0a1a5ac17f074e490c025a4fb4104a9769e58d7d3b838b73f1ee97fa",
+      "sha256": "92cf3f84aa5fb1e40cf5e18aefdf6d1bb831662ec4d95531c934fe4d9cabd0d2"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_CAP_LPI_A.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_CAP_LPI_A.mag",
+      "source_sha256": "2aa0be280d26547c634840630a2e6e62c4684fa48c010cbc9502df784b0bb48d",
+      "sha256": "f90d0687188983e37f57db9fe2c840a86db938d3ebe123fb6bb1be46af5fbbc7"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_CAP_LPI_B.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_CAP_LPI_B.mag",
+      "source_sha256": "07ea81fd5d2ad116c93a7834466c8831e8a2a666ae08cf331654102bb3a3178f",
+      "sha256": "6b6834177ab73fd6b02fa9ac8a614e64f3ca5ed7205642c9e5f2aa55611164f2"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_CAP_VCP.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_CAP_VCP.mag",
+      "source_sha256": "74ebdd1a93758b5a6c476b76e1b146a74496d606bbbe3b4af6a5311afe122d7d",
+      "sha256": "155dbc26769f22ac133688daad3ea8a9d354f55a68171cd2792bec229de24a8c"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_N_G.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_N_G.mag",
+      "source_sha256": "9bbc6d9e71b4c721a61f4a93cb7cd76388b4dd9466c71818b38a9b3c1b68e067",
+      "sha256": "75a4037ced0487311edcdcc57948b2a833bc376eebe0e4b27eed66d17c8aa9ac"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_OTA.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_OTA.mag",
+      "source_sha256": "97a43d6d707102aa00a2d8bd092627fb3feb85166d9cbdc03868f3449c6fa779",
+      "sha256": "1566b1d084ce2e81c6d45faef5f721f3341992f385b9deca027c0942a9e292c4"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_CAS.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_CAS.mag",
+      "source_sha256": "667ea3996177a2d4ea27a8493f9d60793f931560a0961310fca04cf6b44cd791",
+      "sha256": "edcae479a478521156a63f1a87c6eb8e3fffd124f01af0760bf97223020acbe8"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_CC.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_CC.mag",
+      "source_sha256": "18a5ad77460d6b55e9d4f0180d54bb3a7fab96ca054517b3ad10e8e70deef69d",
+      "sha256": "9ccea280441750676ca4b94a22bc7bb569f0dc0a26c8a7695363c69ec0deef8e"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_SRC.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_SRC.mag",
+      "source_sha256": "395f58f17ee004c5fc8e558b557a705a9c360a4cb2974d95f656deaa992bd2bd",
+      "sha256": "909a52ea1ac8f3fbafd8aaf0cba5d18b6feff54f6b375561ba56052337b8088a"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_SU.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_P_SU.mag",
+      "source_sha256": "5750c0b2a2a522c952ad9a3d9c2336762af946d31ee71f1ad80c9a3fb08005e5",
+      "sha256": "2174fdbaef6d8541c0aff805e77143885e9144995dbbf56e57f815a84832732c"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_R_LAD.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP_R_LAD.mag",
+      "source_sha256": "3d68f10ad5a9df37a239c5b1fd59338565af9aefdffd2c086419c62f1795e9c5",
+      "sha256": "0e0fd0fa7091ae77e45af2ca46240c7ea96c60ba4483e18d5983c127a2c90dff"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_BIPOLAR.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIPOLAR.mag",
+      "source_sha256": "92d589c0c0bda32d54fc23d1b8f40edc8bba71f0dc592044cb3c30d710727fcf",
+      "sha256": "a25c63af087187060def13eafdb2bbbe7ee55cf7b2ad1b779d2763d877fa83cc"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR.mag",
+      "source_sha256": "0c8f56fc72f01aa771ec23be339091060c1931923706657f6282f8b11d80ac00",
+      "sha256": "298adfa07a05ef9102b57eecd3c0b6a6141f5ce064af1f7d0159a20f9eab074f"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_N_LOAD_A.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_N_LOAD_A.mag",
+      "source_sha256": "38af143c5cc2bbf3355f51ae7fb5ec0a4fe48d0903269c4b2cb2787b32174038",
+      "sha256": "f8e78166e02644fd8d08863acadcbcff5936b86a3cfb8f94501d4dc430f5efd2"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_N_LOAD_B.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_N_LOAD_B.mag",
+      "source_sha256": "052572f279d9b968bbf79ff3a0ec03e9216f9a162b9e26489142007c9a684807",
+      "sha256": "fb5f2833f5799c3ce8b2683b869630afbeabcab6a94608a17561942300e5c52f"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_N_MIRR.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_N_MIRR.mag",
+      "source_sha256": "860cf8ec48715785d4cb61d10d7512f62eb8b1a46c04d406ce219eacbbcc2b2a",
+      "sha256": "fc1787189bda17bbacdcaf2c9f4dfc87e7ad3b136ee307adb3efbe80e3253945"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_BIAS.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_BIAS.mag",
+      "source_sha256": "48f73f417d37df062f056f34a60211cbd97638c295693073a3dec46f6d7f470f",
+      "sha256": "e4e49829f5d881ef8e397fc4f3992e78ea521015b0f8fbcdd2f2dae667496f3d"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_IN_A.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_IN_A.mag",
+      "source_sha256": "178bcc952d9f5bef40df907538b7295c210f5260e98dc50a98bd816d6e5b173a",
+      "sha256": "86e9a14002701b9893f1815d6588d6038d8d7f86b787a79eb56e72341e9c93de"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_IN_B.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_IN_B.mag",
+      "source_sha256": "826a7ee50c70139729d32b054e94faadf23be613af35f3e5a71a56e1fac3d71d",
+      "sha256": "4d620a7e8ef02b84122af0debee712742f6b2403e778eacf4912581e66dd6bf1"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_SW.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_P_SW.mag",
+      "source_sha256": "d220849791f4c8ddf54cc868cbf1c43e62c50b5cd4c81793fcaaf69844e5ac39",
+      "sha256": "db1206d9a6aba34b33a20185aed18c59915176b957dceac170a687fecd4e8fff"
+    },
+    {
+      "path": "reference/LELO_TEMP_SKY130A/LELOTEMP_OTAR_R_DEG.mag",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR_R_DEG.mag",
+      "source_sha256": "8ab9ae5caf5c3798f41ac1f9abd612ffc53b8517605508b1c1cc4b35b0e49ab6",
+      "sha256": "6b5114fb2b3625c74761d766692d7b3e733ed5f0f21fd98bfe7ecbe9afebf9b4"
+    },
+    {
+      "path": "schematic/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.sch",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.sch",
+      "source_sha256": "7c1472a5c43b47600592490ad2db1c24159c648b0b143bd829901a4e44a0fb7a",
+      "sha256": "0d71207cdd47e749b3d96c9a394cb68287ebf81dba0c60460781ed89b0aa98c1"
+    },
+    {
+      "path": "schematic/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.sym",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.sym",
+      "source_sha256": "23e3e6a6725616d2b484c30ac3e487c5d366984add7c9b3c162eea985fa122a9",
+      "sha256": "23e3e6a6725616d2b484c30ac3e487c5d366984add7c9b3c162eea985fa122a9"
+    },
+    {
+      "path": "schematic/LELO_TEMP_SKY130A/LELOTEMP_BIPOLAR.sch",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIPOLAR.sch",
+      "source_sha256": "d1c5b313a2fa06d508dbef82de9e1738c16f8cf466346380786afffa527ff41b",
+      "sha256": "d498624e33f2e4a20f62345ab5fce25266a778eaa33a83b2b96b3f91b53aea6c"
+    },
+    {
+      "path": "schematic/LELO_TEMP_SKY130A/LELOTEMP_BIPOLAR.sym",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_BIPOLAR.sym",
+      "source_sha256": "f9095e6815db9f7d16fd03714421301503c49945b016deb30135597f3e16eb0d",
+      "sha256": "f9095e6815db9f7d16fd03714421301503c49945b016deb30135597f3e16eb0d"
+    },
+    {
+      "path": "schematic/LELO_TEMP_SKY130A/LELOTEMP_OTAR.sch",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR.sch",
+      "source_sha256": "efecd3c1deb8c60538602ca7b4b0516f023b3a8f3831c25ba9f42290291e4d82",
+      "sha256": "731ae723354c9fd959ce16b37cc7b825e7a99fb586564ea09a03abcd12a44388"
+    },
+    {
+      "path": "schematic/LELO_TEMP_SKY130A/LELOTEMP_OTAR.sym",
+      "source": "lelo_temp_sky130a/design/LELO_TEMP_SKY130A/LELOTEMP_OTAR.sym",
+      "source_sha256": "95ab2b1167f09faa9118208bc02e3a7e7ac5357fa723482e062b23a22ee1680f",
+      "sha256": "95ab2b1167f09faa9118208bc02e3a7e7ac5357fa723482e062b23a22ee1680f"
+    }
+  ],
+  "immutable_magic": {
+    "cells/REY_ATR_SKY130A/REYATR_CAPX1.mag": "38ed8bc9e99294a4b9f4420e79a1ab540929e1f9372dadcbf81c0bc9fa7c3b8a",
+    "cells/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.mag": "2ca5f971186398b98d20e7f3411b25195cd85c974b029836bcfb0acec37b65fa",
+    "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0.mag": "82e590d3fb603635a5e5f4c85a88d46954cfb0616e1ca982e07f66317172b72a",
+    "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0D.mag": "4461e35bbb169cb8a3afa258c1506cee86cd06d7f49cda1aed5071b01dcf9ab9",
+    "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.mag": "84e2a4abef04529146229bec9a9f6642d848f824c8ce8a6c06a1a6e2f8aeef75",
+    "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.mag": "30f9e7dd13eb3d597ae807d41c6224d7147d84acf5fef5a2663b9e28f41ce0a6",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0.mag": "0a8015d7acd043a2d6ed54ba48bb255abde2b2168e500399fd81fe8092a9ec98",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0D.mag": "576301aecfe09f8186d2d5d22eca8ac44056545989c21c207ed8221196385711",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.mag": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.mag": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0.mag": "3664143e9e925612bcf587e36f7ad40c3d7965719d9c832fc8d14bc1662b315b",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0D.mag": "8a9621544dea1e79be9a97859c19b60ebbef73dff35283ddcc83b170968cc8bf",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.mag": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.mag": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2.mag": "bf3b036ab8da0b96061de2a6a443a5678b74708da6aa5e8cafc28a09277d62e7",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2D.mag": "94d3247707792bd203adeeb3fec0124622fe4101673ee49b0e5e56759bbb9a4e",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0.mag": "f7decc4696c735888b766b2ae3be7cbc25ce72d6b9536486499a9aa149e2c4d3",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0D.mag": "a9fcc3b592aeb30dc14df91f57c9b4d2bbdf29ef1037e6c841185131d33c24de",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.mag": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+    "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.mag": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+    "cells/REY_ATR_SKY130A/REYATR_RES_36C2F0.mag": "c25397faf3b533857200a5e4913ba3c76ba66b5f0dd0d2b947a80e85546d0cb9",
+    "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.mag": "5ad2dee25a13e4532de3ae453e482e52641f76bf97e243a9a350363a01006766",
+    "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.mag": "d9f86c71fcae4aada9754d8e452aa4923ef96deeb8fb5b04b2f6a4093916809b"
+  }
+}

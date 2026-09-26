@@ -1,0 +1,32 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1786140000
+<< checkpaint >>
+rect 0 0 3200 480
+<< ptap >>
+rect -96 120 3296 200
+rect -96 200 3296 280
+rect -96 280 3296 360
+rect -96 360 96 440
+rect 3104 360 3296 440
+rect -96 440 96 520
+rect 3104 440 3296 520
+<< locali >>
+rect -96 120 3296 200
+rect -96 200 3296 280
+rect -96 280 3296 360
+rect -96 280 3296 360
+rect -96 360 96 440
+rect 3104 360 3296 440
+rect -96 440 96 520
+rect 3104 440 3296 520
+<< ptapc >>
+rect 160 200 2976 280
+<< pwell >>
+rect -184 -128 3384 608
+<< labels >>
+flabel locali s -96 280 3296 360 0 FreeSans 400 0 0 0 B
+<< properties >>
+string FIXED_BBOX 0 0 3200 480
+<< end >>

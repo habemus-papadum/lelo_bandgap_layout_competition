@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+site/
+.docs-build/*
+!.docs-build/.gitkeep
+.cache/
+.DS_Store
+tools.local.yaml
+runs/

@@ -1,0 +1,26 @@
+Bandgap DC operating point (edit generated case.spice to experiment)
+* @TOKENS@ are substituted by tools/simulation.py, not a CIC preprocessor.
+.lib "@PDK_MODELS@" @CORNER@
+.include "@DUT@"
+.option TNOM=27 GMIN=1e-15 reltol=1e-3 method=gear
+.options klu
+.temp @TEMP@
+VDD vdd 0 dc @SUPPLY@
+VEN en 0 dc @SUPPLY@
+VENB enb 0 dc 0
+V0 o0 0 dc 0.5
+V1 o1 0 dc 0.6
+V2 o2 0 dc 0.7
+V3 o3 0 dc 0.8
+VLP lpi lpo dc 0
+XDUT vdd lpi o3 o2 o1 o0 lpo vd1 en 0 enb @TOP@
+.control
+set num_threads=1
+set wr_singlescale
+set wr_vecnames
+optran 0 0 0 10n 20u 0
+op
+wrdata dc.dat i(v0) i(v1) i(v2) i(v3) v(vd1) i(vdd)
+quit
+.endc
+.end

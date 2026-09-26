@@ -30,7 +30,7 @@ def run(command, directory, log, env=None, timeout=180):
 def hierarchy(project, layout, pdk_root, track):
     """Resolve every child before Magic can silently replace it with an empty cell."""
     project, layout = Path(project).resolve(), Path(layout).resolve()
-    primitive_dir = Path(pdk_root) / "sky130A/libs.ref/sky130_fd_pr/mag"
+    pdk_libraries = Path(pdk_root) / "sky130A/libs.ref"
     library = project / "cells/REY_ATR_SKY130A"
     manifest = json.loads((project / "cells/manifest.json").read_text())
     immutable = {Path(p).stem: digest for p, digest in manifest["immutable_magic"].items()}
@@ -42,7 +42,7 @@ def hierarchy(project, layout, pdk_root, track):
 
     def visit(path, is_pdk=False):
         path = path.resolve()
-        if not any(path.is_relative_to(root) for root in (project, layout.parent, primitive_dir.resolve())):
+        if not any(path.is_relative_to(root) for root in (project, layout.parent, pdk_libraries.resolve())):
             raise RuntimeError(f"Cell escapes the project/submission directories: {path}")
         name = path.stem
         if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", name):
@@ -77,8 +77,9 @@ def hierarchy(project, layout, pdk_root, track):
                 continue
             parts = shlex.split(line)
             child = parts[1]
-            if child.startswith("sky130_fd_pr__"):
-                candidate = primitive_dir / (child + ".mag")
+            if child.startswith("sky130_") and "__" in child:
+                library_name = child.split("__", 1)[0]
+                candidate = pdk_libraries / library_name / "mag" / (child + ".mag")
                 visit(candidate, True)
                 continue
             # Explicit use paths take precedence and must actually resolve.
@@ -97,6 +98,17 @@ def hierarchy(project, layout, pdk_root, track):
         active.remove(name)
 
     visit(layout)
+    # Magic can report zero DRC errors for an empty canvas. Fail that case explicitly.
+    has_paint = False
+    for path in seen.values():
+        layer = None
+        for line in path.read_text().splitlines():
+            if line.startswith("<< "):
+                layer = line[3:-3]
+            if layer not in (None, "labels", "properties", "checkpaint", "end") and line.startswith(("rect ", "tri ")):
+                has_paint = True
+    if not has_paint:
+        raise RuntimeError("Layout has no physical geometry: pin-only submissions are not valid designs.")
     return seen, primitives
 
 

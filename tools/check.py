@@ -19,6 +19,8 @@ except ImportError:
 import physical
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+import project
 
 
 def read_yaml(path):
@@ -26,15 +28,8 @@ def read_yaml(path):
 
 
 def local_config():
-    path = ROOT / "tools.local.yaml"
-    local = read_yaml(path) if path.exists() else {}
-    pdk = local.get("pdk_root") or os.environ.get("PDK_ROOT")
-    if not pdk:
-        raise RuntimeError("Set PDK_ROOT or copy tools.local.example.yaml to tools.local.yaml")
-    pdk = Path(pdk).expanduser()
-    if not pdk.is_absolute():
-        pdk = ROOT / pdk
-    local["pdk_root"] = str(pdk.resolve())
+    local = project.local_settings()
+    local["pdk_root"] = str(project.pdk_root())
     configured = local.get("tools", {})
     local["tools"] = {}
     for name in ("magic", "netgen", "ngspice", "xschem"):
@@ -82,7 +77,8 @@ class Evaluation:
         inputs = {"layout": {name: physical.sha(path) for name, path in sorted(self.cells.items())},
                   "competition": measurement_config, "pdk_sha256": self.pdk_hash,
                   "track": args.track, "mode": args.mode,
-                  "cell_manifest": physical.sha(ROOT / "cells/manifest.json")}
+                  "cell_manifest": physical.sha(ROOT / "cells/manifest.json"),
+                  "project_paths": physical.sha(ROOT / "project.py")}
         for folder in ("tools", "testbenches", "schematic"):
             for p in sorted((ROOT/folder).rglob("*")):
                 if p.is_file() and "__pycache__" not in p.parts and p.suffix not in (".pyc", ".log"):

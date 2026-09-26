@@ -1,8 +1,8 @@
 site_name: LELO bandgap layout competition
 site_description: A transparent, reproducible Sky130 layout competition
-site_url: https://habemus-papadum.github.io/lelo_bandgap_layout_compeititon/
-repo_url: https://github.com/habemus-papadum/lelo_bandgap_layout_compeititon
-repo_name: habemus-papadum/lelo_bandgap_layout_compeititon
+site_url: https://habemus-papadum.github.io/lelo_bandgap_layout_competition/
+repo_url: https://github.com/habemus-papadum/lelo_bandgap_layout_competition
+repo_name: habemus-papadum/lelo_bandgap_layout_competition
 docs_dir: .docs-build
 site_dir: site
 hooks:
@@ -87,6 +87,8 @@ nav:
       - Overview: index.md
       - First run: docs/getting-started.md
       - CLI guide: docs/cli.md
+      - Submissions and tracks: docs/submissions.md
+      - PDK and direct tools: docs/pdk.md
   - Competition:
       - Circuit and interface: docs/design.md
       - Rules and scoring: docs/evaluation.md

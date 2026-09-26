@@ -100,8 +100,8 @@ it includes real DRC and LVS failures, not only successful reference runs.
 From a configured project directory:
 
 ```sh
-uv run bandgap all --profile corners --out runs/qualification
-uv run bandgap score --profile corners --out runs/qualification
+uv run bandgap all --reference --profile corners --out runs/qualification
+uv run bandgap score --reference --profile corners --out runs/qualification
 ```
 
 The first run measured with provisional scoring values. The second rescored the

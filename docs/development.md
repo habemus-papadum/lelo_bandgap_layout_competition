@@ -54,8 +54,8 @@ publish the artifact through GitHub's Pages deployment action; pull requests
 build only. The workflow uses separate build and deploy permissions, and does
 not need a personal access token. See the [GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-The hosted workflow does **not** claim analog/DRC qualification: it has no PDK or
-EDA installation. Run `uv run bandgap acceptance` and the appropriate evaluation
+The hosted workflow does **not** claim analog/DRC qualification: the PDK is
+bundled, but hosted runners have no EDA executables. Run `uv run bandgap acceptance` and the appropriate evaluation
 profile on a configured workstation when changing the evaluator. The existing
 [reference qualification](reference-results.md) remains dated measurement evidence,
 not a claim that each documentation build reruns those simulations.

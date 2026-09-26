@@ -1,0 +1,74 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1787844598
+<< nwell >>
+rect -38 261 590 582
+<< pwell >>
+rect 1 21 523 203
+rect 30 -17 64 21
+<< locali >>
+rect 18 215 94 263
+rect 203 323 237 493
+rect 371 323 405 493
+rect 203 289 405 323
+rect 306 181 405 289
+rect 203 147 405 181
+rect 203 51 237 147
+rect 371 51 405 147
+<< obsli1 >>
+rect 0 527 552 561
+rect 19 331 85 493
+rect 119 367 167 527
+rect 19 297 162 331
+rect 128 249 162 297
+rect 271 367 337 527
+rect 439 297 505 527
+rect 128 215 228 249
+rect 128 181 162 215
+rect 35 147 162 181
+rect 35 51 69 147
+rect 105 17 153 113
+rect 271 17 337 113
+rect 439 17 505 177
+rect 0 -17 552 17
+<< metal1 >>
+rect 0 496 552 592
+rect 0 -48 552 48
+<< labels >>
+rlabel locali s 18 215 94 263 6 A
+port 1 nsew signal input
+rlabel metal1 s 0 -48 552 48 8 VGND
+port 2 nsew ground bidirectional abutment
+rlabel pwell s 30 -17 64 21 6 VNB
+port 3 nsew ground bidirectional
+rlabel pwell s 1 21 523 203 6 VNB
+port 3 nsew ground bidirectional
+rlabel nwell s -38 261 590 582 6 VPB
+port 4 nsew power bidirectional
+rlabel metal1 s 0 496 552 592 6 VPWR
+port 5 nsew power bidirectional abutment
+rlabel locali s 371 51 405 147 6 X
+port 6 nsew signal output
+rlabel locali s 203 51 237 147 6 X
+port 6 nsew signal output
+rlabel locali s 203 147 405 181 6 X
+port 6 nsew signal output
+rlabel locali s 306 181 405 289 6 X
+port 6 nsew signal output
+rlabel locali s 203 289 405 323 6 X
+port 6 nsew signal output
+rlabel locali s 371 323 405 493 6 X
+port 6 nsew signal output
+rlabel locali s 203 323 237 493 6 X
+port 6 nsew signal output
+<< properties >>
+string FIXED_BBOX 0 0 552 544
+string LEFclass CORE
+string LEFsite unithd
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_END 3173278
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+string GDS_START 3167930
+<< end >>

@@ -110,3 +110,20 @@ and RC extraction in 0.45, 0.31 and 0.41 seconds respectively. This checks that
 the alternate physical representation works; it does not make a flattened
 reference an original competition entry. Scratch files are retained locally in
 `/var/folders/w1/1x9cdy092l9331ys__k74djm0000gn/T/bandgap-custom-track-c2dkrita`.
+
+## Submission and PDK update
+
+The suite now has **18** checks, passing in 4.03 s with the bundled PDK. Two
+new LVS cases use the same official Netgen comparison/setup: one 2 um-wide,
+0.5 um-long NFET matches two parallel 1 um-wide, 0.5 um-long fingers; a single
+4 um-wide, 1 um-long device fails despite having the same W/L. These are
+netlist-level equivalence tests. They do not waive DRC or certify the physical
+parasitics of arbitrary finger arrangements.
+
+Seven tool-free CLI tests additionally cover both pin-only starter tracks,
+refusing overwrites, explicit/default/reference selection, output isolation,
+PDK selection, shell quoting, argument forwarding and failure exit codes.
+A direct Magic load/save roundtrip retained all eleven starter ports. The
+pin-only layout is rejected by physical preflight rather than being accepted as
+DRC-clean merely because there is no geometry. PDK relocation and byte comparison
+results are recorded in [PDK setup](pdk.md).

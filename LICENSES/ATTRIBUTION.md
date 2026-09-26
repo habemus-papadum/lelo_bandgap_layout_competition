@@ -22,6 +22,8 @@ license grant or assert that the designs are public domain. The local extraction
 was made at the workspace owner's request. Confirm the applicable upstream
 permission before distributing the imported designs as a public competition.
 
-Sky130A device symbols, primitive geometry, technology decks, and device models
-remain external prerequisites. No PDK files are copied into this package; their
-installed notices and license terms continue to apply.
+The full measured Sky130A installation is now bundled under `pdk/`, including
+its installed notices. Additional source license copies are in `pdk/LICENSES/`.
+See [PDK provenance](../docs/pdk.md) and `pdk/sky130A/.config/nodeinfo.json` for
+source revisions and the distinction between PDK licenses and imported circuit
+assets. Bundling does not change their applicable license terms.

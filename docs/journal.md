@@ -337,9 +337,9 @@ implemented.
 ## 2026-09-26 — Standalone uv project, CLI and documentation publication
 
 The user explicitly requested extracting this folder to a public personal
-GitHub repository named `lelo_bandgap_layout_compeititon`, retaining that spelling,
+GitHub repository named `lelo_bandgap_layout_competition`, retaining that spelling,
 with a local checkout under `~/src`. The standalone project is now at
-`~/src/lelo_bandgap_layout_compeititon`; earlier journal paths refer to the
+`~/src/lelo_bandgap_layout_competition`; earlier journal paths refer to the
 original aicex workspace. The source competition folder was preserved.
 
 - Added `pyproject.toml`, a committed `uv.lock`, a default Python version and
@@ -379,3 +379,53 @@ Created the public repository under `habemus-papadum` and enabled Pages with
 the Actions build type. The first hosted run found a missing major-version
 alias for setup-uv; pinned all four actions to verified release commit hashes
 instead. The workflow retains readable release-version comments.
+
+## 2026-09-26 — Corrected name, submission workspaces and bundled PDK
+
+Renamed the repository and local checkout to `lelo_bandgap_layout_competition`,
+updated the remote, documentation URLs and project metadata, and rebuilt the uv
+environment's script entry points after moving its directory.
+
+The user clarified that the schematic must remain fixed, while custom-track
+participants may change physical realization, including electrically equivalent
+finger arrangements. The user also chose to bundle the full installed Sky130A
+PDK rather than trim libraries or require another download.
+
+- Added `bandgap new DIRECTORY --track provided|custom`. It creates eleven
+  unattached Magic pin labels, metadata and an ignore rule, with no reference
+  geometry or device instances. Creation refuses an existing directory.
+- Added `--submission`/`-s`, explicit `--reference`, local `default_submission`,
+  and automatic report separation by directory/mode/profile. Evaluation prints
+  the selected directory, track, PDK and report destination. Removed reference
+  copying from the participant workflow and documentation.
+- Added an explicit empty-geometry rejection so a blank canvas cannot appear
+  to pass DRC. Seven tool-free CLI contract tests pass. A direct Magic roundtrip
+  retains all eleven starter ports. Two independent starters were created and
+  the provided-track starter was rejected as empty, as intended.
+- Copied the entire installed Sky130A tree and support scripts into `pdk/`,
+  without changing or removing installed files. Its 4,169 PDK/support files
+  match the original byte-for-byte. Sky130A itself is 469,372,636 bytes across
+  4,125 files, including the HD standard-cell library. Added source licenses,
+  installed revision metadata and a per-file SHA-256 manifest. No submodule or
+  Git LFS is used. Sky130B is a separate variant and was not bundled.
+- Traced the installed PDK to AICEX's open_pdks configure/build/install flow,
+  commit `1689ac3f2dc763876eaf967227c7dfe831b031ae`. The installer has no active
+  post-install metal-resistor patch. The older prebuilt wulffern/pdk clone
+  script is a separate path. The vendored snapshot preserves the actual
+  installed outputs, including any generated defaults.
+- Default PDK is now the bundle, with documented explicit/local/environment
+  overrides. Added offline `pdk install` to a chosen directory or XDG cache,
+  `pdk compare`, and shell-quoted `bandgap env` output. Added project `magicrc`
+  for direct tools and documented Magic, Xschem, ngspice and Netgen setup.
+- Installed a full separate copy, then relocated it to a cache path containing
+  spaces. With the old `PDK_ROOT` unset, that path passed doctor (9.31 s), DRC
+  (0.52 s), LVS (0.83 s), RC extraction (0.35 s), extracted DC (12.94 s), and
+  schematic regeneration. Both netlists are byte-identical to the canonical
+  files. No exhaustive corner rerun was requested or performed for this change.
+- Expanded trusted PDK hierarchy lookup to the installed libraries rather than
+  only the primitive library. LVS against the fixed circuit remains mandatory.
+  The 18-check acceptance suite passed in 4.03 s, including a new equivalent
+  parallel-finger match and a rejection of altered dimensions with equal W/L.
+- Kept PDK data out of the generated Pages artifact; it is available from the
+  ordinary Git checkout. The site contains participant setup, direct-tool and
+  submission guides plus the existing technical and historical documentation.

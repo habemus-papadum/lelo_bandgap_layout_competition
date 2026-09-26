@@ -3,7 +3,8 @@
 The package includes the complete local reference hierarchy: 22 circuit Magic
 cells in `reference/LELO_TEMP_SKY130A`, 23 reusable Magic tiles in
 `cells/REY_ATR_SKY130A`, and the matching editable schematic/symbol views.
-Only the bipolar primitive geometry comes from the installed Sky130A PDK.
+The bipolar primitive geometry comes from the configured Sky130A PDK, which
+defaults to the complete installation bundled in `pdk/`.
 There are no source-repository symlinks and no generators to install.
 
 ## Bandgap interface

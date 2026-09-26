@@ -10,8 +10,8 @@ dependencies = ["PyYAML>=6,<7", "typer>=0.16,<1"]
 bandgap = "bandgap_cli:app"
 
 [project.urls]
-Repository = "https://github.com/habemus-papadum/lelo_bandgap_layout_compeititon"
-Documentation = "https://habemus-papadum.github.io/lelo_bandgap_layout_compeititon/"
+Repository = "https://github.com/habemus-papadum/lelo_bandgap_layout_competition"
+Documentation = "https://habemus-papadum.github.io/lelo_bandgap_layout_competition/"
 
 [dependency-groups]
 docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.6,<10", "pymdown-extensions>=10,<11"]
@@ -21,4 +21,4 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-py-modules = ["bandgap_cli"]
+py-modules = ["bandgap_cli", "project", "pdk_tools"]

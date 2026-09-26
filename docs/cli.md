@@ -14,6 +14,9 @@ uv run bandgap simulate --help
 
 | Command | Purpose | Prerequisites |
 | --- | --- | --- |
+| `new DIRECTORY --track provided` | Create a pin-only entry | A new directory |
+| `env` | Shell exports for direct EDA tools | None |
+| `pdk path/install/compare` | Inspect or copy the complete bundle | No network required |
 | `doctor` | Tools, hierarchy and real PDK model smoke check | Configured EDA tools and PDK |
 | `drc` | Full Magic DRC, zero violations required | Layout and complete child hierarchy |
 | `lvs` | Fresh connectivity extraction and schematic comparison | Layout |
@@ -24,20 +27,22 @@ uv run bandgap simulate --help
 | `score` | Validate reports, apply gates and rank | Every physical check and complete paired simulations |
 | `all` | Run the full sequence | Configured tools and PDK |
 | `netlist` | Regenerate both canonical schematic views into a scratch directory | Xschem and PDK_ROOT |
-| `acceptance` | Run 16 positive/negative physical and report checks | Configured tools and PDK |
+| `acceptance` | Run 18 positive/negative physical and report checks | Configured tools and PDK |
 
-The checks share `--layout`, `--out`, `--track provided|custom`, and
+The checks share `--submission DIRECTORY` (or `--reference`), `--out`, `--pdk-root`, and
 `--mode rc|c`. `--profile typical|corners` applies to simulations and scoring;
 `--view schematic|layout` selects the view for `simulate`. Shared options that
 are irrelevant to a particular physical check have no effect. `all` always
-simulates both views. The default profile is typical and the default mode is RC.
+simulates both views. The default profile is typical and the default mode is RC. The track comes
+from submission.yaml. Without explicit selection, local default_submission is
+used, falling back to the reference. See [submissions](submissions.md).
 
 ## Fast experiments
 
 ```sh
-uv run bandgap extract --mode c --out runs/fast
-uv run bandgap simulate --mode c --view layout --analysis dc --out runs/fast
-uv run bandgap simulate --view schematic --analysis tran --analysis stability --out runs/experiment
+uv run bandgap extract --reference --mode c --out runs/fast
+uv run bandgap simulate --reference --mode c --view layout --analysis dc --out runs/fast
+uv run bandgap simulate --reference --view schematic --analysis tran --analysis stability --out runs/experiment
 ```
 
 Partial analyses and C-only results are useful while iterating, but do not

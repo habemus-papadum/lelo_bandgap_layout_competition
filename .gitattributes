@@ -1,3 +1,6 @@
 # Preserve imported views and canonical netlists byte-for-byte, including upstream whitespace.
 cells/** whitespace=-blank-at-eol,-blank-at-eof
 schematic/** whitespace=-blank-at-eol,-blank-at-eof
+
+# Vendored PDK files are intentionally preserved exactly as installed.
+pdk/** -whitespace

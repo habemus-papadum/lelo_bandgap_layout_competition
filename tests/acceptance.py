@@ -42,7 +42,7 @@ def main():
 
     def project(name):
         dest = scratch / name
-        shutil.copytree(ROOT, dest, ignore=shutil.ignore_patterns("runs", "__pycache__", "tools.local.yaml", ".venv", ".git", "site", ".docs-build", "*.egg-info"))
+        shutil.copytree(ROOT, dest, ignore=shutil.ignore_patterns("runs", "__pycache__", "tools.local.yaml", ".venv", ".git", "site", ".docs-build", "*.egg-info", "pdk", "submissions"))
         # Resolved paths also support workstations configured without PDK_ROOT.
         (dest / "tools.local.yaml").write_text(json.dumps(local))
         return dest
@@ -147,6 +147,24 @@ def main():
         artifact = Path(area_report["directory"]) / "area.mag"
         artifact.write_text(artifact.read_text() + "\n")
         rejects("modified retained artifact", lambda: check.Evaluation(options).previous("area"), "changed or disappeared")
+
+        # LVS must accept electrical finger partitioning, but not a resized device
+        # that merely preserves W/L. These use the official comparison function/setup.
+        fingers = scratch / "fingers"
+        fingers.mkdir()
+        one, split, resized = [fingers / name for name in ("one.spice", "split.spice", "resized.spice")]
+        header = ".subckt finger_test d g s b\n"
+        end = ".ends finger_test\n"
+        model = "sky130_fd_pr__nfet_01v8"
+        one.write_text(header + f"X1 d g s b {model} w=2 l=0.5\n" + end)
+        split.write_text(header + f"X1 d g s b {model} w=1 l=0.5\nX2 d g s b {model} w=1 l=0.5\n" + end)
+        resized.write_text(header + f"X1 d g s b {model} w=4 l=1\n" + end)
+        for name in ("equivalent", "resized"):
+            (fingers / name).mkdir()
+        physical.lvs(local, split, one, "finger_test", fingers / "equivalent")
+        print("PASS equivalent parallel transistor fingers", flush=True)
+        rejects("same W/L with changed dimensions", lambda: physical.lvs(
+            local, resized, one, "finger_test", fingers / "resized"), "LVS failed")
 
         table = scratch / "nonfinite.dat"
         table.write_text("time value\n0 nan\n")

@@ -1,0 +1,57 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1787844598
+<< nwell >>
+rect -38 261 222 582
+<< pwell >>
+rect 5 13 179 203
+rect 35 -12 57 13
+<< ndiff >>
+rect 31 39 153 177
+<< pdiff >>
+rect 31 305 153 505
+<< locali >>
+rect 0 527 29 561
+rect 63 527 121 561
+rect 155 527 184 561
+rect 0 -17 29 17
+rect 63 -17 121 17
+rect 155 -17 184 17
+<< viali >>
+rect 29 527 63 561
+rect 121 527 155 561
+rect 29 -17 63 17
+rect 121 -17 155 17
+<< metal1 >>
+rect 0 561 184 592
+rect 0 527 29 561
+rect 63 527 121 561
+rect 155 527 184 561
+rect 0 496 184 527
+rect 0 17 184 48
+rect 0 -17 29 17
+rect 63 -17 121 17
+rect 155 -17 184 17
+rect 0 -48 184 -17
+<< labels >>
+flabel pwell s 35 -12 57 12 0 FreeSans 200 0 0 0 VNB
+port 2 nsew
+flabel nwell s 35 530 60 556 0 FreeSans 200 0 0 0 VPB
+port 3 nsew
+flabel metal1 s 34 -10 57 9 0 FreeSans 200 0 0 0 VGND
+port 4 nsew
+flabel metal1 s 34 535 54 552 0 FreeSans 200 0 0 0 VPWR
+port 5 nsew
+rlabel comment s 0 0 0 0 4 fill_2
+<< properties >>
+string FIXED_BBOX 0 0 184 544
+string GDS_END 3945758
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+string GDS_START 3944250
+string MASKHINTS_HVTP 0 250 184 544
+string MASKHINTS_NSDM 0 -38 184 14 178 14 184 202 0 14 6 202 0 202 184 203
+string MASKHINTS_PSDM 0 271 184 280 178 280 184 530 0 280 6 530 0 530 184 582
+string MASKHINTS_STDCELL 0 0 184 544
+string path 0.000 13.600 4.600 13.600 
+<< end >>

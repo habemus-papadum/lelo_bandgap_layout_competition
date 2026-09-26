@@ -1,11 +1,16 @@
 """Thin, discoverable CLI; numerical and physical checks remain in tools/."""
 from enum import Enum
 from pathlib import Path
+import os
+import shlex
+import json
 import subprocess
 import sys
 from typing import Annotated
 
 import typer
+import project
+import pdk_tools
 
 ROOT = Path(__file__).resolve().parent
 app = typer.Typer(help="Sky130 bandgap layout competition: inspect, check, simulate and score.",
@@ -38,16 +43,19 @@ class Analysis(str, Enum):
     stability = "stability"
 
 
-def run(script: str, arguments: list[str]) -> None:
+def run(script: str, arguments: list[str], pdk=None) -> None:
     """Use the uv environment's interpreter and preserve tool failure exit codes."""
-    raise typer.Exit(subprocess.call([sys.executable, str(ROOT / script), *arguments]))
+    selected = project.pdk_root(pdk)
+    env = dict(os.environ, PDK_ROOT=str(selected), BANDGAP_PDK_ROOT=str(selected))
+    raise typer.Exit(subprocess.call([sys.executable, str(ROOT / script), *arguments], env=env))
 
 
 def register_check(name: str, description: str) -> None:
     def command(
-        layout: Annotated[Path | None, typer.Option(help="Top Magic file; defaults to the reference.")] = None,
-        out: Annotated[Path, typer.Option(help="Reports and retained artifacts; reuse between dependent checks.")] = ROOT / "runs/reference",
-        track: Annotated[Track, typer.Option(help="Provided tiles or custom device geometry.")] = Track.provided,
+        submission: Annotated[Path | None, typer.Option("--submission", "-s", help="Submission directory containing submission.yaml.")] = None,
+        reference: Annotated[bool, typer.Option(help="Use the supplied reference, overriding the local default.")] = False,
+        pdk_root: Annotated[Path | None, typer.Option(help="Override the PDK directory containing sky130A.")] = None,
+        out: Annotated[Path | None, typer.Option(help="Override reports directory; normally isolated by submission/mode/profile.")] = None,
         mode: Annotated[Mode, typer.Option(help="Distributed RC, or C-only development extraction.")] = Mode.rc,
         profile: Annotated[Profile, typer.Option(help="Simulation/scoring grid: one or 45 conditions per view.")] = Profile.typical,
         view: Annotated[View, typer.Option(help="Circuit view for simulate; all runs both views.")] = View.schematic,
@@ -55,13 +63,22 @@ def register_check(name: str, description: str) -> None:
     ) -> None:
         if analysis and name != "simulate":
             raise typer.BadParameter("--analysis is only for simulate; all/scoring require every analysis.")
-        args = [name, "--out", str(out), "--track", track.value, "--mode", mode.value,
-                "--profile", profile.value, "--view", view.value]
-        if layout is not None:
-            args += ["--layout", str(layout)]
+        try:
+            directory, layout, track, is_reference = project.select_submission(submission, reference)
+        except (ValueError, OSError) as exc:
+            raise typer.BadParameter(str(exc)) from exc
+        if out is None:
+            base = ROOT / "runs/reference" if is_reference else directory / "runs"
+            out = base / mode.value / profile.value
+        selected_pdk = project.pdk_root(pdk_root)
+        typer.echo(f"{'Reference' if is_reference else 'Submission'}: {directory}\n"
+                   f"Track: {track} | PDK: {selected_pdk}\nReports: {out.resolve()}", err=True)
+        args = [name, "--layout", str(layout), "--out", str(out), "--track", track,
+                "--mode", mode.value, "--profile", profile.value, "--view", view.value]
         for item in analysis or []:
             args += ["--analysis", item.value]
-        run("tools/check.py", args)
+        run("tools/check.py", args, selected_pdk)
+
     app.command(name, help=description)(command)
 
 
@@ -80,21 +97,73 @@ for name, description in {
 
 @app.command()
 def netlist(
-    pdk_root: Annotated[Path | None, typer.Option(envvar="PDK_ROOT", help="Directory containing sky130A.")] = None,
+    pdk_root: Annotated[Path | None, typer.Option(help="Directory containing sky130A; defaults to configured/bundled PDK.")] = None,
     xschem: Annotated[str, typer.Option(help="Xschem executable or absolute path.")] = "xschem",
     output_dir: Annotated[Path, typer.Option(help="Generated views; canonical schematic files are not overwritten.")] = ROOT / "runs/netlist",
 ) -> None:
     """Regenerate both schematic SPICE views with Xschem."""
     args = ["--xschem", xschem, "--output-dir", str(output_dir)]
-    if pdk_root is not None:
-        args += ["--pdk-root", str(pdk_root)]
-    run("schematic/netlist.py", args)
+    selected = project.pdk_root(pdk_root)
+    typer.echo(f"Schematic: {ROOT / 'schematic'} | PDK: {selected}", err=True)
+    args += ["--pdk-root", str(selected)]
+    run("schematic/netlist.py", args, selected)
 
 
 @app.command()
 def acceptance(keep: Annotated[bool, typer.Option(help="Retain successful scratch directories too.")] = False) -> None:
-    """Exercise 16 positive/negative evaluator checks; requires the EDA tools."""
+    """Exercise positive/negative evaluator checks; requires the EDA tools."""
+    typer.echo(f"Acceptance fixtures: disposable copies of {ROOT} | PDK: {project.pdk_root()}", err=True)
     run("tests/acceptance.py", ["--keep"] if keep else [])
+
+
+@app.command("new")
+def new_submission(
+    directory: Annotated[Path, typer.Argument(help="New submission directory; must not already exist.")],
+    track: Annotated[Track, typer.Option(help="Fixed-cell assembly or custom device layout.")],
+) -> None:
+    """Create an empty layout with pin labels and track metadata (no reference geometry)."""
+    try:
+        created = project.create_submission(directory, track.value)
+    except (OSError, ValueError) as exc:
+        raise typer.BadParameter(str(exc)) from exc
+    typer.echo(f"Created {created} | Track: {track.value}\nPin-only starter: layout checks intentionally fail until geometry is added.")
+
+
+@app.command("env")
+def environment(pdk_root: Annotated[Path | None, typer.Option(help="PDK override for direct tool use.")] = None) -> None:
+    """Print shell-quoted exports for use with eval; no tool installation required."""
+    for key, value in {"PDK_ROOT": project.pdk_root(pdk_root), "BANDGAP_ROOT": ROOT}.items():
+        typer.echo(f"export {key}={shlex.quote(str(value))}")
+
+
+pdk_app = typer.Typer(help="Inspect or copy the bundled PDK; no download or recursive clone needed.", no_args_is_help=True)
+app.add_typer(pdk_app, name="pdk")
+
+
+@pdk_app.command("path")
+def pdk_path() -> None:
+    """Print the effective PDK directory (local config/environment override the bundle)."""
+    typer.echo(project.pdk_root())
+
+
+@pdk_app.command("install")
+def pdk_install(directory: Annotated[Path | None, typer.Argument(help="Copy destination; defaults to the competition's XDG cache directory.")] = None) -> None:
+    """Copy and verify the complete bundle to another location, without network access."""
+    try:
+        destination = pdk_tools.install(directory or pdk_tools.cache_destination())
+    except (ValueError, OSError, RuntimeError) as exc:
+        typer.echo(str(exc), err=True)
+        raise typer.Exit(1) from exc
+    typer.echo(f"Installed PDK: {destination}\nUse --pdk-root {shlex.quote(str(destination))} or configure pdk_root in tools.local.yaml.")
+
+
+@pdk_app.command("compare")
+def pdk_compare(directory: Annotated[Path, typer.Argument(help="PDK root to compare against the bundled snapshot.")]) -> None:
+    """Report matching, changed, missing and extra files as JSON."""
+    result = pdk_tools.compare(directory.expanduser().resolve())
+    typer.echo(json.dumps(result, indent=2))
+    if result['changed'] or result['missing'] or result['extra']:
+        raise typer.Exit(1)
 
 
 @app.command("help")

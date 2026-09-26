@@ -1,0 +1,80 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1787844598
+<< nwell >>
+rect -38 261 774 582
+<< pwell >>
+rect 417 157 735 203
+rect 1 21 735 157
+rect 30 -17 64 21
+<< locali >>
+rect 25 151 66 415
+rect 547 299 614 493
+rect 178 84 249 265
+rect 284 261 318 265
+rect 284 83 344 261
+rect 380 83 432 265
+rect 579 161 614 299
+rect 547 68 614 161
+rect 547 59 613 68
+<< obsli1 >>
+rect 0 527 736 561
+rect 19 451 85 527
+rect 120 333 170 493
+rect 214 383 280 527
+rect 317 333 367 493
+rect 447 367 513 527
+rect 100 299 511 333
+rect 649 367 715 527
+rect 100 117 134 299
+rect 35 51 134 117
+rect 466 263 511 299
+rect 466 215 545 263
+rect 466 17 513 178
+rect 651 17 717 162
+rect 0 -17 736 17
+<< metal1 >>
+rect 0 496 736 592
+rect 0 -48 736 48
+<< labels >>
+rlabel locali s 25 151 66 415 6 A
+port 1 nsew signal input
+rlabel locali s 178 84 249 265 6 B
+port 2 nsew signal input
+rlabel locali s 284 83 344 261 6 C
+port 3 nsew signal input
+rlabel locali s 284 261 318 265 6 C
+port 3 nsew signal input
+rlabel locali s 380 83 432 265 6 D
+port 4 nsew signal input
+rlabel metal1 s 0 -48 736 48 8 VGND
+port 5 nsew ground bidirectional abutment
+rlabel pwell s 30 -17 64 21 6 VNB
+port 6 nsew ground bidirectional
+rlabel pwell s 1 21 735 157 6 VNB
+port 6 nsew ground bidirectional
+rlabel pwell s 417 157 735 203 6 VNB
+port 6 nsew ground bidirectional
+rlabel nwell s -38 261 774 582 6 VPB
+port 7 nsew power bidirectional
+rlabel metal1 s 0 496 736 592 6 VPWR
+port 8 nsew power bidirectional abutment
+rlabel locali s 547 59 613 68 6 X
+port 9 nsew signal output
+rlabel locali s 547 68 614 161 6 X
+port 9 nsew signal output
+rlabel locali s 579 161 614 299 6 X
+port 9 nsew signal output
+rlabel locali s 547 299 614 493 6 X
+port 9 nsew signal output
+<< properties >>
+string FIXED_BBOX 0 0 736 544
+string LEFclass CORE
+string LEFsite unithd
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_END 3103246
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+string GDS_START 3096028
+<< end >>

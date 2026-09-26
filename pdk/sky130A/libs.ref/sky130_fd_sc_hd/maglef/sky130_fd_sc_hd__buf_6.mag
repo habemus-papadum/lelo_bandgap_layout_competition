@@ -1,0 +1,87 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1787844598
+<< nwell >>
+rect -38 261 866 582
+<< pwell >>
+rect 53 21 827 203
+rect 53 17 64 21
+rect 30 -17 64 17
+<< locali >>
+rect 56 215 237 263
+rect 339 323 373 493
+rect 507 323 541 493
+rect 675 323 709 493
+rect 339 289 709 323
+rect 442 181 709 289
+rect 339 147 709 181
+rect 339 51 373 147
+rect 507 51 541 147
+rect 675 51 709 147
+<< obsli1 >>
+rect 0 527 828 561
+rect 87 297 121 527
+rect 155 331 221 493
+rect 255 367 303 527
+rect 155 297 305 331
+rect 271 249 305 297
+rect 407 367 473 527
+rect 575 367 641 527
+rect 743 297 809 527
+rect 271 215 365 249
+rect 271 181 305 215
+rect 155 147 305 181
+rect 87 17 121 113
+rect 155 51 221 147
+rect 255 17 289 113
+rect 407 17 473 113
+rect 575 17 641 113
+rect 743 17 809 177
+rect 0 -17 828 17
+<< metal1 >>
+rect 0 496 828 592
+rect 0 -48 828 48
+<< labels >>
+rlabel locali s 56 215 237 263 6 A
+port 1 nsew signal input
+rlabel metal1 s 0 -48 828 48 8 VGND
+port 2 nsew ground bidirectional abutment
+rlabel pwell s 30 -17 64 17 8 VNB
+port 3 nsew ground bidirectional
+rlabel pwell s 53 17 64 21 6 VNB
+port 3 nsew ground bidirectional
+rlabel pwell s 53 21 827 203 6 VNB
+port 3 nsew ground bidirectional
+rlabel nwell s -38 261 866 582 6 VPB
+port 4 nsew power bidirectional
+rlabel metal1 s 0 496 828 592 6 VPWR
+port 5 nsew power bidirectional abutment
+rlabel locali s 675 51 709 147 6 X
+port 6 nsew signal output
+rlabel locali s 507 51 541 147 6 X
+port 6 nsew signal output
+rlabel locali s 339 51 373 147 6 X
+port 6 nsew signal output
+rlabel locali s 339 147 709 181 6 X
+port 6 nsew signal output
+rlabel locali s 442 181 709 289 6 X
+port 6 nsew signal output
+rlabel locali s 339 289 709 323 6 X
+port 6 nsew signal output
+rlabel locali s 675 323 709 493 6 X
+port 6 nsew signal output
+rlabel locali s 507 323 541 493 6 X
+port 6 nsew signal output
+rlabel locali s 339 323 373 493 6 X
+port 6 nsew signal output
+<< properties >>
+string FIXED_BBOX 0 0 828 544
+string LEFclass CORE
+string LEFsite unithd
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_END 3180310
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+string GDS_START 3173332
+<< end >>

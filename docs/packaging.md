@@ -1,5 +1,8 @@
 # Standalone packaging record
 
+This records the initial extraction. The later [bundled PDK](pdk.md) supersedes
+references below to an external PDK prerequisite.
+
 2026-09-26. This records the extraction work authorized after restoring REY_TR
 and verifying representative original full-sensor checks. Work used the source
 files read-only; temporary generation and physical checks ran outside the source

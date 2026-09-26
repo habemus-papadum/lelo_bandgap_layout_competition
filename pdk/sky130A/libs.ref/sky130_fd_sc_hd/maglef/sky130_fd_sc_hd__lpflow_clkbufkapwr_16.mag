@@ -1,0 +1,163 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1787844598
+<< nwell >>
+rect -38 261 1878 582
+<< pwell >>
+rect 1 21 1822 157
+rect 29 -17 63 21
+<< locali >>
+rect 463 347 508 492
+rect 628 347 680 492
+rect 800 347 852 492
+rect 972 347 1024 492
+rect 1141 347 1193 492
+rect 1313 347 1365 492
+rect 1485 347 1537 492
+rect 463 344 1537 347
+rect 1659 344 1717 492
+rect 463 299 1805 344
+rect 17 153 80 265
+rect 1572 181 1805 299
+rect 456 147 1805 181
+rect 456 56 508 147
+rect 628 56 680 147
+rect 800 56 852 147
+rect 969 56 1024 147
+rect 1141 56 1193 147
+rect 1313 56 1365 147
+rect 1485 56 1537 147
+rect 1659 56 1711 147
+<< obsli1 >>
+rect 0 527 1840 561
+rect 19 299 85 493
+rect 119 265 157 493
+rect 191 299 257 493
+rect 291 265 329 492
+rect 363 299 429 493
+rect 542 381 594 493
+rect 714 381 766 493
+rect 886 381 938 493
+rect 1058 381 1107 493
+rect 1230 381 1279 493
+rect 1402 381 1451 493
+rect 1574 381 1625 493
+rect 1751 378 1805 493
+rect 119 215 1538 265
+rect 17 17 78 119
+rect 119 53 164 215
+rect 198 17 250 122
+rect 286 53 336 215
+rect 370 17 422 129
+rect 542 17 594 113
+rect 714 17 766 113
+rect 886 17 935 113
+rect 1058 17 1107 113
+rect 1229 17 1279 113
+rect 1401 17 1451 113
+rect 1573 17 1625 113
+rect 1745 17 1805 113
+rect 0 -17 1840 17
+<< metal1 >>
+rect 0 496 1840 592
+rect 14 428 1826 468
+rect 23 416 81 428
+rect 195 416 253 428
+rect 366 416 424 428
+rect 536 416 594 428
+rect 712 416 770 428
+rect 884 416 942 428
+rect 1055 416 1113 428
+rect 1227 416 1285 428
+rect 1398 416 1456 428
+rect 1568 416 1626 428
+rect 1744 416 1802 428
+rect 0 -48 1840 48
+<< labels >>
+rlabel locali s 17 153 80 265 6 A
+port 1 nsew signal input
+rlabel metal1 s 1744 416 1802 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 1568 416 1626 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 1398 416 1456 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 1227 416 1285 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 1055 416 1113 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 884 416 942 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 712 416 770 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 536 416 594 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 366 416 424 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 195 416 253 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 23 416 81 428 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 14 428 1826 468 6 KAPWR
+port 2 nsew power bidirectional abutment
+rlabel metal1 s 0 -48 1840 48 8 VGND
+port 3 nsew ground bidirectional abutment
+rlabel pwell s 29 -17 63 21 6 VNB
+port 4 nsew ground bidirectional
+rlabel pwell s 1 21 1822 157 6 VNB
+port 4 nsew ground bidirectional
+rlabel nwell s -38 261 1878 582 6 VPB
+port 5 nsew power bidirectional
+rlabel metal1 s 0 496 1840 592 6 VPWR
+port 6 nsew power bidirectional abutment
+rlabel locali s 1659 56 1711 147 6 X
+port 7 nsew signal output
+rlabel locali s 1485 56 1537 147 6 X
+port 7 nsew signal output
+rlabel locali s 1313 56 1365 147 6 X
+port 7 nsew signal output
+rlabel locali s 1141 56 1193 147 6 X
+port 7 nsew signal output
+rlabel locali s 969 56 1024 147 6 X
+port 7 nsew signal output
+rlabel locali s 800 56 852 147 6 X
+port 7 nsew signal output
+rlabel locali s 628 56 680 147 6 X
+port 7 nsew signal output
+rlabel locali s 456 56 508 147 6 X
+port 7 nsew signal output
+rlabel locali s 456 147 1805 181 6 X
+port 7 nsew signal output
+rlabel locali s 1572 181 1805 299 6 X
+port 7 nsew signal output
+rlabel locali s 463 299 1805 344 6 X
+port 7 nsew signal output
+rlabel locali s 1659 344 1717 492 6 X
+port 7 nsew signal output
+rlabel locali s 463 344 1537 347 6 X
+port 7 nsew signal output
+rlabel locali s 1485 347 1537 492 6 X
+port 7 nsew signal output
+rlabel locali s 1313 347 1365 492 6 X
+port 7 nsew signal output
+rlabel locali s 1141 347 1193 492 6 X
+port 7 nsew signal output
+rlabel locali s 972 347 1024 492 6 X
+port 7 nsew signal output
+rlabel locali s 800 347 852 492 6 X
+port 7 nsew signal output
+rlabel locali s 628 347 680 492 6 X
+port 7 nsew signal output
+rlabel locali s 463 347 508 492 6 X
+port 7 nsew signal output
+<< properties >>
+string FIXED_BBOX 0 0 1840 544
+string LEFclass CORE
+string LEFsite unithd
+string LEFsymmetry X Y R90
+string LEFview TRUE
+string GDS_END 2348836
+string GDS_FILE $PDKPATH/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds
+string GDS_START 2334230
+<< end >>

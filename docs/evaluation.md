@@ -9,7 +9,8 @@ official limits or code require a new published competition revision.
 
 Checks must establish all of the following before a design is scored:
 
-1. Every layout child resolves, with no conflicting cell definitions. The
+1. The layout contains physical geometry (pin-only starters fail), and every
+   layout child resolves with no conflicting cell definitions. The
    provided-cell track also checks immutable tile hashes and rejects new
    device-forming layers in assembly cells. PDK primitive cells come from the
    configured PDK, not similarly named submission files.

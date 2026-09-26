@@ -6,12 +6,12 @@ reducing area and limiting the effects of wiring parasitics. The schematic,
 reusable device cells, reference Magic layout, and evaluator are included here.
 
 This is a standalone repository. uv manages Python, Typer and PyYAML; evaluation uses
-Magic, Netgen, ngspice, and an installed **Sky130A** PDK. There are no CIC tools,
+Magic, Netgen, ngspice, and the **bundled full Sky130A installation**. There are no CIC tools,
 parent repository scripts, network downloads, or source-repository symlinks in
 the evaluation path. Xschem is useful for editing/regenerating the supplied
 schematic but is not needed to evaluate a layout.
 
-Read the [published documentation](https://habemus-papadum.github.io/lelo_bandgap_layout_compeititon/),
+Read the [published documentation](https://habemus-papadum.github.io/lelo_bandgap_layout_competition/),
 start with the [first-run guide](docs/getting-started.md), or explore the
 [CLI guide](docs/cli.md). Detailed evidence and the work history are preserved
 in the documentation navigation.
@@ -22,27 +22,30 @@ Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and clone 
 uv manages the pinned Python environment and locked dependencies:
 
 ```sh
-git clone https://github.com/habemus-papadum/lelo_bandgap_layout_compeititon.git
-cd lelo_bandgap_layout_compeititon
+git clone https://github.com/habemus-papadum/lelo_bandgap_layout_competition.git
+cd lelo_bandgap_layout_competition
 uv sync --locked
 cp tools.local.example.yaml tools.local.yaml
-# Edit tools.local.yaml with the installed executable and PDK locations.
+# Optional: edit tool paths or default_submission in tools.local.yaml.
 uv run bandgap help
 uv run bandgap help simulate
-uv run bandgap doctor
-uv run bandgap all --profile typical
+uv run bandgap doctor --reference
+uv run bandgap all --reference --profile typical
 ```
 
-`pdk_root` is the directory **containing** `sky130A/`. If tools are already on
-PATH, setting `PDK_ROOT` also works without a local configuration file.
-`tools.local.yaml` and generated `runs/` are ignored by Git.
+No separate PDK download is needed. The full installed Sky130A tree and support
+scripts are included directly in Git. See [PDK setup and direct tool use](docs/pdk.md)
+for overrides, optional cache installation, size and provenance.
+`tools.local.yaml`, `submissions/` and generated `runs/` are ignored by Git.
 
-The default input is the reference layout. A complete typical run checks DRC,
+Without a selection or local default, the input is the reference layout.
+Use `--reference` explicitly for baseline checks, or `--submission DIRECTORY`
+for an entry; each invocation prints its selection. A complete typical run checks DRC,
 LVS, area, distributed RC extraction, both circuit views, and a development
 score. The official profile is selected explicitly:
 
 ```sh
-uv run bandgap all --profile corners --out runs/qualification
+uv run bandgap all --reference --profile corners --out runs/qualification
 ```
 
 This runs 45 conditions per view: five model-library sections (`tt`, `ss`,
@@ -53,17 +56,17 @@ sections retain typical passive corners; see [evaluation rules](docs/evaluation.
 ## Individual checks
 
 Every command retains a readable log and a JSON result with elapsed time.
-Commands return nonzero on a failed check. Run from this directory:
+Commands return nonzero on a failed check. For a created submission, run:
 
 ```sh
-uv run bandgap doctor
-uv run bandgap drc
-uv run bandgap lvs
-uv run bandgap area
-uv run bandgap extract
-uv run bandgap simulate --view schematic
-uv run bandgap simulate --view layout
-uv run bandgap score
+uv run bandgap doctor -s submissions/attempt-01
+uv run bandgap drc -s submissions/attempt-01
+uv run bandgap lvs -s submissions/attempt-01
+uv run bandgap area -s submissions/attempt-01
+uv run bandgap extract -s submissions/attempt-01
+uv run bandgap simulate -s submissions/attempt-01 --view schematic
+uv run bandgap simulate -s submissions/attempt-01 --view layout
+uv run bandgap score -s submissions/attempt-01
 ```
 
 Simulation can be narrowed to `--analysis dc`, `--analysis tran`, or
@@ -84,9 +87,9 @@ There are separate rankings for two tracks:
 
 - **Provided cells:** use the supplied immutable device/passive/tap tiles and
   arrange/connect them with your own routing and assembly hierarchy. Default
-  CLI setting: `--track provided`.
+  creation option: `bandgap new DIRECTORY --track provided`.
 - **Custom devices:** implement the same electrical schematic with your own
-  geometry or tile variants. Use `--track custom`. PDK primitives remain
+  geometry or tile variants. Create with `bandgap new DIRECTORY --track custom`. PDK primitives remain
   available, but the supplied REY layout tiles are not entry components in
   this track. Give custom variants new cell names and filenames; supplied
   tile names remain reserved even if their geometry changes.
@@ -98,14 +101,18 @@ to the fixed schematic. This is a layout competition, not a circuit-sizing
 competition. Consult the [cell catalog](docs/cells.md), especially the
 diode-connected `D` variants and physical-only taps.
 
-For a provided-cell starting point:
+Create independent empty entries:
 
 ```sh
-mkdir -p submissions
-cp -R reference/LELO_TEMP_SKY130A submissions/my_entry
-uv run bandgap drc --layout submissions/my_entry/LELOTEMP_BIAS_IBP.mag --out runs/my_entry
-uv run bandgap all --layout submissions/my_entry/LELOTEMP_BIAS_IBP.mag --out runs/my_entry
+uv run bandgap new submissions/attempt-01 --track provided
+uv run bandgap new submissions/attempt-02 --track custom
+uv run bandgap drc -s submissions/attempt-01
 ```
+
+New layouts contain only pin labels and intentionally fail layout checks until
+geometry is added. No reference geometry is copied. Set `default_submission`
+in local YAML to select your current entry; use `--reference` for baseline runs.
+See [submissions](docs/submissions.md) for track rules, selection and isolated reports.
 
 Submit `LELOTEMP_BIAS_IBP.mag` and any local child `.mag` files, with their
 relative paths intact. A flat file is accepted in the custom track. All
@@ -130,12 +137,11 @@ property, and checks complete hierarchy loading before accepting DRC/LVS.
 To edit the schematic or reproduce its canonical netlists:
 
 ```sh
-export PDK_ROOT=/path/to/pdk
+eval "$(uv run bandgap env)"
 xschem --rcfile schematic/xschemrc schematic/LELO_TEMP_SKY130A/LELOTEMP_BIAS_IBP.sch
 uv run bandgap netlist --output-dir runs/netlist
 ```
 
-Set `PDK_ROOT` for the Xschem commands even if the evaluator obtains that path
-from `tools.local.yaml`. Regeneration writes to `runs/netlist`; it does not
+The `env` command exports the same resolved PDK root for direct tools. Regeneration writes to `runs/netlist`; it does not
 replace the fixed canonical SPICE files used for judging. To experiment with
 schematic changes, use a copied bench with the regenerated netlist.

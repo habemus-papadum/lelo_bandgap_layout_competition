@@ -1,0 +1,5 @@
+# Direct Magic use: magic -rcfile /path/to/competition/magicrc entry/LELOTEMP_BIAS_IBP.mag
+set bandgap_root [file dirname [file normalize [info script]]]
+if {![info exists env(PDK_ROOT)]} {set env(PDK_ROOT) [file join $bandgap_root pdk]}
+source [file join $env(PDK_ROOT) sky130A libs.tech magic sky130A.magicrc]
+path search +[file join $bandgap_root cells REY_ATR_SKY130A]

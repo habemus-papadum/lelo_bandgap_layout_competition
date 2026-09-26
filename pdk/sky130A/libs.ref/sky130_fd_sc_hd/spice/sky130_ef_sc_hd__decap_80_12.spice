@@ -1,0 +1,7 @@
+* NGSPICE file created from sky130_ef_sc_hd__decap_80_12.ext - technology: sky130A
+
+.subckt sky130_ef_sc_hd__decap_80_12 VNB VPB VGND VPWR
+X0 VPWR VGND VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0.2262 pd=2.26 as=1.4007 ps=6.7 w=0.87 l=3.64
+X1 VGND VPWR VGND VNB sky130_fd_pr__nfet_01v8 ad=0.7645 pd=3.88 as=0.9075 ps=5.5 w=0.55 l=3.6
+.ends
+

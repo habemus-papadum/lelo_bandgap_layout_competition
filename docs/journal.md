@@ -374,3 +374,8 @@ doctor, DRC, LVS, RC extraction, both simulation views and scoring. Its
 development score is 62.042339, matching the original typical baseline.
 The previous 45-condition qualification remains historical evidence; this
 interface/documentation migration did not rerun the full grid.
+
+Created the public repository under `habemus-papadum` and enabled Pages with
+the Actions build type. The first hosted run found a missing major-version
+alias for setup-uv; pinned all four actions to verified release commit hashes
+instead. The workflow retains readable release-version comments.

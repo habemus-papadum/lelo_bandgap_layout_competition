@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "source": "schematic/bandgap.lvs.spice",
+  "source_sha256": "2dca7718752f7ecb6a26019d4f70f1cd917969023ff9757280722692efcc2fa8",
+  "coordinate_unit_um": 0.005,
+  "minimum_paint_gap_um": 5.0,
+  "counts": {
+    "REYATR_CAPX1": 13,
+    "REYATR_LVT_PCH_11C5F0": 12,
+    "REYATR_NCH_4C5F0": 19,
+    "REYATR_PCH_11C5F0": 6,
+    "REYATR_PCH_2C5F0": 13,
+    "REYATR_PCH_4C1F2": 19,
+    "REYATR_PCH_4C5F0": 26,
+    "REYATR_RES_36C2F0": 8,
+    "sky130_fd_pr__rf_pnp_05v5_W3p40L3p40": 9
+  },
+  "cells": {
+    "REYATR_CAPX1": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_CAPX1.mag",
+      "sha256": "38ed8bc9e99294a4b9f4420e79a1ab540929e1f9372dadcbf81c0bc9fa7c3b8a",
+      "paint_bounds": [
+        80,
+        0,
+        1520,
+        1520
+      ]
+    },
+    "REYATR_LVT_PCH_11C5F0": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_LVT_PCH_11C5F0.mag",
+      "sha256": "2ca5f971186398b98d20e7f3411b25195cd85c974b029836bcfb0acec37b65fa",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        928
+      ]
+    },
+    "REYATR_NCH_4C5F0": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4C5F0.mag",
+      "sha256": "82e590d3fb603635a5e5f4c85a88d46954cfb0616e1ca982e07f66317172b72a",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        928
+      ]
+    },
+    "REYATR_NCH_4CTAPBOT": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPBOT.mag",
+      "sha256": "84e2a4abef04529146229bec9a9f6642d848f824c8ce8a6c06a1a6e2f8aeef75",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_NCH_4CTAPTOP": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_NCH_4CTAPTOP.mag",
+      "sha256": "30f9e7dd13eb3d597ae807d41c6224d7147d84acf5fef5a2663b9e28f41ce0a6",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_PCH_11C5F0": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11C5F0.mag",
+      "sha256": "0a8015d7acd043a2d6ed54ba48bb255abde2b2168e500399fd81fe8092a9ec98",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        928
+      ]
+    },
+    "REYATR_PCH_11CTAPBOT": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPBOT.mag",
+      "sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_PCH_11CTAPTOP": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_11CTAPTOP.mag",
+      "sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_PCH_2C5F0": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2C5F0.mag",
+      "sha256": "3664143e9e925612bcf587e36f7ad40c3d7965719d9c832fc8d14bc1662b315b",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        928
+      ]
+    },
+    "REYATR_PCH_2CTAPBOT": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPBOT.mag",
+      "sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_PCH_2CTAPTOP": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_2CTAPTOP.mag",
+      "sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_PCH_4C1F2": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C1F2.mag",
+      "sha256": "bf3b036ab8da0b96061de2a6a443a5678b74708da6aa5e8cafc28a09277d62e7",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        928
+      ]
+    },
+    "REYATR_PCH_4C5F0": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4C5F0.mag",
+      "sha256": "f7decc4696c735888b766b2ae3be7cbc25ce72d6b9536486499a9aa149e2c4d3",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        928
+      ]
+    },
+    "REYATR_PCH_4CTAPBOT": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPBOT.mag",
+      "sha256": "b4ecd4f07abb5b2d23ee1478988c8eb5ad5e2fe57520190abbf69bb755c4215c",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_PCH_4CTAPTOP": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_PCH_4CTAPTOP.mag",
+      "sha256": "de5a3c9a41341640ae1fabf61c8d615bf1bc8722b0c8ddf7bf350bb7393fb4a0",
+      "paint_bounds": [
+        -184,
+        -128,
+        1784,
+        608
+      ]
+    },
+    "REYATR_RES_36C2F0": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36C2F0.mag",
+      "sha256": "c25397faf3b533857200a5e4913ba3c76ba66b5f0dd0d2b947a80e85546d0cb9",
+      "paint_bounds": [
+        -184,
+        -128,
+        3384,
+        928
+      ]
+    },
+    "REYATR_RES_36CTAPBOT": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPBOT.mag",
+      "sha256": "5ad2dee25a13e4532de3ae453e482e52641f76bf97e243a9a350363a01006766",
+      "paint_bounds": [
+        -184,
+        -128,
+        3384,
+        608
+      ]
+    },
+    "REYATR_RES_36CTAPTOP": {
+      "path": "cells/REY_ATR_SKY130A/REYATR_RES_36CTAPTOP.mag",
+      "sha256": "d9f86c71fcae4aada9754d8e452aa4923ef96deeb8fb5b04b2f6a4093916809b",
+      "paint_bounds": [
+        -184,
+        -128,
+        3384,
+        608
+      ]
+    },
+    "sky130_fd_pr__rf_pnp_05v5_W3p40L3p40": {
+      "path": "pdk/sky130A/libs.ref/sky130_fd_pr/mag/sky130_fd_pr__rf_pnp_05v5_W3p40L3p40.mag",
+      "sha256": "e305257d00edb26eb9b111cee453962229a6d16ecf445c739ef86635b44fd617",
+      "paint_bounds": [
+        0,
+        0,
+        1340,
+        1340
+      ]
+    }
+  }
+}

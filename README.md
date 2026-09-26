@@ -101,16 +101,22 @@ to the fixed schematic. This is a layout competition, not a circuit-sizing
 competition. Consult the [cell catalog](docs/cells.md), especially the
 diode-connected `D` variants and physical-only taps.
 
-Create independent empty entries:
+Create independent entries:
 
 ```sh
 uv run bandgap new submissions/attempt-01 --track provided
 uv run bandgap new submissions/attempt-02 --track custom
+uv run bandgap magic -s submissions/attempt-01
 uv run bandgap drc -s submissions/attempt-01
 ```
 
-New layouts contain only pin labels and intentionally fail layout checks until
-geometry is added. No reference geometry is copied. Set `default_submission`
+Provided-track entries start with 125 unwired electrical parts grouped by type,
+plus a separate tap palette and an inventory mapping back to the schematic.
+Placement, taps and routing remain your work; full LVS intentionally fails.
+Custom-track entries retain the pin-only canvas. Both have eleven unattached
+port placeholders. Preview the provided starter with
+`uv run bandgap magic templates/provided` and read its
+[instructions](templates/provided/README.md). Set `default_submission`
 in local YAML to select your current entry; use `--reference` for baseline runs.
 See [submissions](docs/submissions.md) for track rules, selection and isolated reports.
 

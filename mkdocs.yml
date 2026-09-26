@@ -5,6 +5,9 @@ repo_url: https://github.com/habemus-papadum/lelo_bandgap_layout_competition
 repo_name: habemus-papadum/lelo_bandgap_layout_competition
 docs_dir: .docs-build
 site_dir: site
+# These are downloadable layout starters, not MkDocs theme templates.
+exclude_docs: |
+  !/templates/
 hooks:
   - scripts/docs_hook.py
 watch:
@@ -93,6 +96,7 @@ nav:
       - Circuit and interface: docs/design.md
       - Rules and scoring: docs/evaluation.md
       - Reusable cell catalog: docs/cells.md
+      - Provided starter instructions: templates/provided/README.md
   - Reference and evidence:
       - Results and timings: docs/reference-results.md
       - Editable testbenches: testbenches/README.md
@@ -100,6 +104,7 @@ nav:
       - Acceptance checks: docs/acceptance.md
   - Development:
       - uv, documentation and CI: docs/development.md
+      - Starter design assessment: docs/starter-design.md
   - History and provenance:
       - Packaging record: docs/packaging.md
       - Missing dependency investigation: docs/dependency-resolution.md

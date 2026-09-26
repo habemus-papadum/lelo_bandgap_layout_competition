@@ -5,7 +5,7 @@
 ```sh
 uv sync --locked --group docs
 uv run bandgap --help
-uv run python -m unittest discover -s tests -p 'test_cli.py'
+uv run python -m unittest discover -s tests -p 'test_*.py'
 uv run bandgap acceptance
 ```
 
@@ -19,6 +19,26 @@ intended to run from a source checkout: its schematics, cells and configuration
 are repository assets. It is not a standalone PyPI application wheel. Numerical
 and physical evaluation remains in the visible `tools/` scripts. The adapter
 uses its environment's Python interpreter and preserves subprocess exit codes.
+
+## Provided starter generation and checks
+
+```sh
+uv run python -m starter --check
+uv run python tests/starter_acceptance.py --pdk-root pdk
+```
+
+The first command checks the committed files in `templates/provided` against the
+schematic and bundled cell geometry, without EDA tools. Run
+`uv run python -m starter` to regenerate those assets deliberately after source
+changes; review the resulting diff. The generator rejects unsupported assembly
+parameters instead of silently dropping or miscounting devices. `bandgap new`
+copies the committed template and does not run extraction or regenerate parts.
+
+The second command uses Magic/Netgen to check the reference, every electrical
+tile type, the tray's extracted device inventory, its expected circuit-LVS
+mismatch, and its DRC. It also checks direct editor loading and the locations of
+known extraction warnings. It retains logs in `runs/starter-validation-*`.
+See the [design record](starter-design.md) for the boundary and measured results.
 
 ## Preview and build documentation
 

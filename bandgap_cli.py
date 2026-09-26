@@ -124,12 +124,15 @@ def new_submission(
     directory: Annotated[Path, typer.Argument(help="New submission directory; must not already exist.")],
     track: Annotated[Track, typer.Option(help="Fixed-cell assembly or custom device layout.")],
 ) -> None:
-    """Create an empty layout with pin labels and track metadata (no reference geometry)."""
+    """Create an unwired parts tray (provided) or a pin-only canvas (custom)."""
     try:
         created = project.create_submission(directory, track.value)
     except (OSError, ValueError) as exc:
         raise typer.BadParameter(str(exc)) from exc
-    typer.echo(f"Created {created} | Track: {track.value}\nPin-only starter: layout checks intentionally fail until geometry is added.")
+    message = ('Unwired parts tray: place the cells, add taps and route the schematic. LVS intentionally fails.'
+               if track == Track.provided else
+               'Pin-only starter: layout checks intentionally fail until geometry is added.')
+    typer.echo(f"Created {created} | Track: {track.value}\n{message}")
 
 
 @app.command("env")
@@ -137,6 +140,45 @@ def environment(pdk_root: Annotated[Path | None, typer.Option(help="PDK override
     """Print shell-quoted exports for use with eval; no tool installation required."""
     for key, value in {"PDK_ROOT": project.pdk_root(pdk_root), "BANDGAP_ROOT": ROOT}.items():
         typer.echo(f"export {key}={shlex.quote(str(value))}")
+
+
+@app.command("magic")
+def open_magic(
+    target: Annotated[Path | None, typer.Argument(help="Magic file or directory (including a template directory). Defaults to the active submission/reference.")] = None,
+    submission: Annotated[Path | None, typer.Option("--submission", "-s", help="Submission directory containing submission.yaml.")] = None,
+    reference: Annotated[bool, typer.Option(help="Open the reference, overriding the local default.")] = False,
+    pdk_root: Annotated[Path | None, typer.Option(help="Override the PDK directory containing sky130A.")] = None,
+    magic: Annotated[str | None, typer.Option(help="Magic executable; defaults to local tool configuration or PATH.")] = None,
+    dry_run: Annotated[bool, typer.Option(help="Print the working directory and launch command without opening Magic.")] = False,
+) -> None:
+    """Open Magic for editing with the project's PDK and tile library setup."""
+    try:
+        layout = project.select_magic_layout(target, submission, reference)
+        selected_pdk = project.pdk_root(pdk_root)
+        startup = selected_pdk / "sky130A/libs.tech/magic/sky130A.magicrc"
+        if not startup.is_file():
+            raise ValueError(f"Missing Sky130A Magic setup: {startup}")
+    except (ValueError, OSError) as exc:
+        raise typer.BadParameter(str(exc)) from exc
+    executable = magic or project.local_settings().get("tools", {}).get("magic", "magic")
+    if "/" in executable:
+        executable = str(project.project_path(executable))
+    overrides = {"PDK_ROOT": str(selected_pdk), "BANDGAP_PDK_ROOT": str(selected_pdk),
+                 "BANDGAP_ROOT": str(ROOT), "MAGTYPE": "mag", "BANDGAP_LAYOUT": layout.name}
+    # The startup script loads the basename from cwd, avoiding Magic's inferred
+    # sibling-path warnings, then expands and fits the loaded hierarchy.
+    command = [executable, "-rcfile", str(ROOT / "magicrc"), str(ROOT / "tools/magic_open.tcl")]
+    typer.echo(f"Layout: {layout}\nPDK: {selected_pdk}", err=True)
+    if dry_run:
+        typer.echo(f"cd {shlex.quote(str(layout.parent))}")
+        typer.echo(shlex.join(["env", *(f"{key}={value}" for key, value in overrides.items()), *command]))
+        return
+    try:
+        code = subprocess.call(command, cwd=layout.parent, env=dict(os.environ, **overrides))
+    except OSError as exc:
+        typer.echo(f"Could not start Magic ({executable}): {exc}", err=True)
+        raise typer.Exit(1) from exc
+    raise typer.Exit(code)
 
 
 pdk_app = typer.Typer(help="Inspect or copy the bundled PDK; no download or recursive clone needed.", no_args_is_help=True)

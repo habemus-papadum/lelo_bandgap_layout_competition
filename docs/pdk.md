@@ -51,6 +51,12 @@ Sky130A and support-script trees; unrelated variants such as Sky130B are ignored
 
 ## Using tools directly
 
+For Magic, `uv run bandgap magic --reference` or
+`uv run bandgap magic -s submissions/attempt-01` handles executable selection,
+PDK setup and library paths. See the [launcher guide](cli.md#open-a-layout-in-magic)
+for raw file/directory targets and overrides. The following commands are useful
+when starting tools outside the CLI.
+
 Load shell-quoted exports for the same resolved PDK:
 
 ```sh

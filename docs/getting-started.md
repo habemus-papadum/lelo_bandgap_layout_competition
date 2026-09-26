@@ -21,17 +21,21 @@ and set their executable paths. No PDK installation is needed. See
 ```sh
 uv run bandgap new submissions/attempt-01 --track provided
 uv run bandgap new submissions/attempt-02 --track custom
+uv run bandgap magic -s submissions/attempt-01
 uv run bandgap drc --submission submissions/attempt-01
 ```
 
-The initial DRC invocation intentionally fails: the generated layout contains
-pin labels but no geometry. Start drawing with Magic; no reference layout is
-copied into an entry. Read the [submission guide](submissions.md),
+The provided starter is an unwired tray of 125 electrical parts grouped by type.
+It passes initial DRC with the bundled PDK, but fails LVS until you place and
+connect the circuit. Its separate tap palette helps you find the physical tap
+types without prescribing their final arrangement. The custom starter remains
+blank except for pin labels and fails physical checks until geometry is added.
+Read the [submission guide](submissions.md), [starter instructions](../templates/provided/README.md),
 [cell catalog](cells.md), and [fixed-schematic rules](evaluation.md).
 
 ```sh
-eval "$(uv run bandgap env)"
-magic -rcfile "$BANDGAP_ROOT/magicrc" submissions/attempt-01/LELOTEMP_BIAS_IBP.mag
+uv run bandgap magic templates/provided
+uv run bandgap magic submissions/attempt-01/tap_palette.mag
 ```
 
 ## Check and qualify

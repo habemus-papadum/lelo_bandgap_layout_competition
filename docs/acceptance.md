@@ -120,10 +120,25 @@ new LVS cases use the same official Netgen comparison/setup: one 2 um-wide,
 netlist-level equivalence tests. They do not waive DRC or certify the physical
 parasitics of arbitrary finger arrangements.
 
-Seven tool-free CLI tests additionally cover both pin-only starter tracks,
+At that stage, seven tool-free CLI tests additionally covered both pin-only starter tracks,
 refusing overwrites, explicit/default/reference selection, output isolation,
 PDK selection, shell quoting, argument forwarding and failure exit codes.
 A direct Magic load/save roundtrip retained all eleven starter ports. The
 pin-only layout is rejected by physical preflight rather than being accepted as
 DRC-clean merely because there is no geometry. PDK relocation and byte comparison
 results are recorded in [PDK setup](pdk.md).
+
+## Populated provided starter
+
+There are now 14 tool-free CLI/starter tests. They check track-specific creation,
+no overwrites, template reproducibility, all 125 electrical instances, modeled
+fillers, unique names, actual painted bounds, clearance, and separate tap samples.
+The custom starter retains its original pin-only behavior.
+
+`uv run python tests/starter_acceptance.py --pdk-root pdk` separately checks the
+starter with real Magic/Netgen. The reference passes DRC/LVS; all nine electrical
+tile types pass individual LVS and isolated DRC. The tray has 228 extracted
+primitive devices, zero DRC violations and an expected full-circuit LVS mismatch.
+The [design record](starter-design.md#validation-and-known-initial-conditions)
+explains why these are distinct checks and documents the inherited resistor-strip
+extraction warnings.

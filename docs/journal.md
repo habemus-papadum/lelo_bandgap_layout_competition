@@ -434,3 +434,98 @@ The full PDK push succeeded as ordinary Git data (75.41 MiB transferred).
 Hosted CLI tests, strict documentation build and Pages deployment passed.
 A final configuration check also verified that netlist regeneration honors
 the local Xschem executable setting, matching the evaluator tool settings.
+
+## 2026-09-26 — Magic launcher and populated-starter assessment
+
+Added `uv run bandgap magic` with the same default submission/reference selection
+as evaluation commands. Explicit `--reference`, `--submission`/`-s`, and a
+positional Magic file or directory are supported. Directories without submission
+metadata open the competition top file, so the command can also inspect future
+template directories. The launcher resolves the configured executable and PDK,
+uses the project startup file and full `mag` library views, and starts in the
+layout directory. `--dry-run` prints the working directory and shell-quoted
+command. Missing layouts and missing PDK startup files are rejected before launch;
+unfinished layouts are allowed. No circuit checks are implied by opening a file.
+
+The user asked to assess whether an exact parts inventory would give away useful
+design decisions before proceeding with substantial template work. The
+[detailed starter assessment](starter-design.md) distinguishes already published
+schematic tile counts/finger parameters from physical placement groups, tap
+arrangements, and diode-connected variant choices. The recommendation is to keep
+the neutral parts-tray idea, deriving electrical inventory from the schematic
+and leaving physical assembly decisions to participants. A reference-derived
+tap count should not be presented as sufficient for any placement. No populated
+template was created in this step; both `new` tracks retain their existing
+pin-only behavior while this assessment is discussed.
+
+Validation: all 10 tool-free CLI tests passed, including target selection,
+configuration overrides, paths with spaces/apostrophes, conflicting selectors,
+missing targets, launch failures, and exit-code propagation. Real Magic 8.3.541
+loaded the reference and its hierarchy, a new blank submission in a path with
+spaces/apostrophes, and a raw layout directory through the launcher's command,
+environment and working directory, with only headless flags added for the probe.
+All three sessions could load a supplied transistor tile and the PDK bipolar
+primitive. These checks quit without saving and did not rerun DRC/LVS or inspect
+the desktop GUI visually. The strict documentation build passed.
+
+## 2026-09-26 — Schematic-derived provided-track parts tray
+
+Implemented the approved starter change. `bandgap new --track provided` now
+copies a committed, reproducible template containing 125 electrical instances
+of nine types in a spaced grid. The top directly instantiates the original
+library tiles and PDK bipolar primitive. It contains no inter-cell paint; eleven
+unattached top-level ports sit to the left. Type grouping, stable names and an
+inventory CSV make parts identifiable without preserving reference placement
+groups. The custom track retains exactly its pin-only creation path.
+
+The [design and validation details](starter-design.md) explain the boundary.
+In particular, the schematic supplies the electrical inventory, including all
+27 explicitly modeled rail-tied dummy/filler transistors; ordinary transistor
+tiles leave diode connections to the student. A separate `tap_palette.mag`
+contains one of each of the ten tap types. It is copied for convenience but is
+not instantiated by the circuit and does not prescribe the final tap count.
+
+Added `starter.py` with generation and `--check` modes, cell/source provenance,
+actual-paint spacing calculations, and strict rejection of unsupported schematic
+assembly constructs. `bandgap new` copies committed files without needing EDA
+tools. Participant documentation covers locating parts, taps, bulk connections,
+the inherited resistor-strip warnings and the distinction between initial DRC
+and a complete circuit. The Magic launcher now passes the filename relative to
+its selected working directory, avoiding misleading sibling-path warnings for
+cells intentionally resolved through library search paths.
+
+All 14 CLI/starter tests pass. Fresh real-tool validation with the bundled PDK
+passed reference DRC/LVS and individual LVS/DRC for all nine electrical tile
+types. The complete tray has zero DRC violations and extracts 228 primitives:
+128 ordinary PFET fingers, 24 LVT PFET fingers, 38 NFET fingers, 13 capacitors,
+16 resistors and nine bipolar devices. Full circuit LVS runs and reports the
+expected mismatch. The real-tool script also loads a newly created entry through
+the project Magic setup, including paths with spaces/apostrophes, and verifies
+all 24 extraction feedback boxes against the three uncontacted poly strips in
+each immutable resistor tile. These same tile warnings occur in the reference.
+
+Artifacts from the final validation are in
+`runs/starter-validation-et8li15t/`, with per-cell logs and `summary.json`.
+The strict site build includes the downloadable templates and their instructions;
+MkDocs' default exclusion of a directory named `templates` is explicitly undone.
+No circuit simulations are claimed for the disconnected tray, and no reference,
+immutable cell, schematic or PDK geometry was changed.
+
+## 2026-09-26 — Expand and fit Magic's initial view
+
+The user's first GUI view showed collapsed cell outlines. `bandgap magic` now
+opens its target through `tools/magic_open.tcl`, which loads the selected file,
+selects the top, expands the hierarchy, clears the selection and fits the view.
+Magic processes startup scripts ahead of other file arguments, so the script
+loads the filename explicitly from the launcher's environment before changing
+the display. It does not flatten geometry or save files. The behavior applies
+to existing submissions, templates, the tap palette and the reference.
+
+Verified actual visible paint with Magic's `select visible`/`what -list` queries:
+the old startup exposed no child paint, while the new one exposes the transistor,
+resistor, capacitor and bipolar layers. A real GUI session using the XWIND
+display also loaded the correct top and showed expanded paint with a fitted view.
+Headless checks covered the tray, palette, reference and a blank custom entry.
+All 14 automated tests and the real starter acceptance checks passed; the latter
+now asserts visible child layers without manually expanding them in the probe.
+Its retained artifacts are in `runs/starter-validation-qe4gagzw/`.

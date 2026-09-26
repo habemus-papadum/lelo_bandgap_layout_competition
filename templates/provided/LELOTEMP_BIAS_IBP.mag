@@ -1,0 +1,403 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 0
+use REYATR_CAPX1 xd1<0>
+transform 1 0 -80 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<1>
+transform 1 0 4520 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<2>
+transform 1 0 9120 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<3>
+transform 1 0 13720 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<4>
+transform 1 0 18320 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<5>
+transform 1 0 22920 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<6>
+transform 1 0 27520 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<7>
+transform 1 0 32120 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<8>
+transform 1 0 36720 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd1<9>
+transform 1 0 41320 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd2<0>
+transform 1 0 45920 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd2<1>
+transform 1 0 50520 0 1 0
+box 80 0 1520 1520
+use REYATR_CAPX1 xd2<2>
+transform 1 0 55120 0 1 0
+box 80 0 1520 1520
+use REYATR_LVT_PCH_11C5F0 xad6__xbl1<0>
+transform 1 0 184 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl1<1>
+transform 1 0 4784 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl1<2>
+transform 1 0 9384 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl1<3>
+transform 1 0 13984 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl2<0>
+transform 1 0 18584 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl2<1>
+transform 1 0 23184 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl2<2>
+transform 1 0 27784 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl2<3>
+transform 1 0 32384 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl4
+transform 1 0 36984 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xbl5
+transform 1 0 41584 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xfill_p_in_a_0
+transform 1 0 46184 0 1 4728
+box -184 -128 1784 928
+use REYATR_LVT_PCH_11C5F0 xad6__xfill_p_in_b_0
+transform 1 0 50784 0 1 4728
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xfill_n_mirr_0
+transform 1 0 184 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnc0
+transform 1 0 4784 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnc1<0>
+transform 1 0 9384 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnc1<1>
+transform 1 0 13984 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnc1<2>
+transform 1 0 18584 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd1<0>
+transform 1 0 23184 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd1<1>
+transform 1 0 27784 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd1<2>
+transform 1 0 32384 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd1<3>
+transform 1 0 36984 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd2<0>
+transform 1 0 41584 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd2<1>
+transform 1 0 46184 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd2<2>
+transform 1 0 50784 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd2<3>
+transform 1 0 55384 0 1 9328
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd3
+transform 1 0 184 0 1 13928
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xnd4
+transform 1 0 4784 0 1 13928
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xns1
+transform 1 0 9384 0 1 13928
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xns2
+transform 1 0 13984 0 1 13928
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xad6__xns4
+transform 1 0 18584 0 1 13928
+box -184 -128 1784 928
+use REYATR_NCH_4C5F0 xg1
+transform 1 0 23184 0 1 13928
+box -184 -128 1784 928
+use REYATR_PCH_11C5F0 xad6__xba1
+transform 1 0 184 0 1 18528
+box -184 -128 1784 928
+use REYATR_PCH_11C5F0 xad6__xba2
+transform 1 0 4784 0 1 18528
+box -184 -128 1784 928
+use REYATR_PCH_11C5F0 xad6__xba3
+transform 1 0 9384 0 1 18528
+box -184 -128 1784 928
+use REYATR_PCH_11C5F0 xad6__xba6
+transform 1 0 13984 0 1 18528
+box -184 -128 1784 928
+use REYATR_PCH_11C5F0 xad6__xba7
+transform 1 0 18584 0 1 18528
+box -184 -128 1784 928
+use REYATR_PCH_11C5F0 xad6__xba8
+transform 1 0 23184 0 1 18528
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<0>
+transform 1 0 184 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<10>
+transform 1 0 4784 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<1>
+transform 1 0 9384 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<2>
+transform 1 0 13984 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<3>
+transform 1 0 18584 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<4>
+transform 1 0 23184 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<5>
+transform 1 0 27784 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<6>
+transform 1 0 32384 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<7>
+transform 1 0 36984 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<8>
+transform 1 0 41584 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xfill_p_su<9>
+transform 1 0 46184 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xsu1
+transform 1 0 50784 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_2C5F0 xsu2
+transform 1 0 55384 0 1 23128
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xad6__xbs1
+transform 1 0 184 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xad6__xbs2
+transform 1 0 4784 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xad6__xbs4
+transform 1 0 9384 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xad6__xbs6
+transform 1 0 13984 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xad6__xbs7
+transform 1 0 18584 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xad6__xbs8
+transform 1 0 23184 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca2<0>
+transform 1 0 27784 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca2<1>
+transform 1 0 32384 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca2<2>
+transform 1 0 36984 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca2<3>
+transform 1 0 41584 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca4
+transform 1 0 46184 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<0>
+transform 1 0 50784 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<1>
+transform 1 0 55384 0 1 27728
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<2>
+transform 1 0 184 0 1 32328
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<3>
+transform 1 0 4784 0 1 32328
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<4>
+transform 1 0 9384 0 1 32328
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<5>
+transform 1 0 13984 0 1 32328
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<6>
+transform 1 0 18584 0 1 32328
+box -184 -128 1784 928
+use REYATR_PCH_4C1F2 xca5<7>
+transform 1 0 23184 0 1 32328
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<0>
+transform 1 0 184 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<1>
+transform 1 0 4784 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<2>
+transform 1 0 9384 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<3>
+transform 1 0 13984 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<4>
+transform 1 0 18584 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<5>
+transform 1 0 23184 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<6>
+transform 1 0 27784 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca1<7>
+transform 1 0 32384 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca2
+transform 1 0 36984 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca3<0>
+transform 1 0 41584 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca3<1>
+transform 1 0 46184 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca3<2>
+transform 1 0 50784 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xca3<3>
+transform 1 0 55384 0 1 36928
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xcc<0>
+transform 1 0 184 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xcc<1>
+transform 1 0 4784 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xcc<2>
+transform 1 0 9384 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xcc<3>
+transform 1 0 13984 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xcc<4>
+transform 1 0 18584 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<0>
+transform 1 0 23184 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<1>
+transform 1 0 27784 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<2>
+transform 1 0 32384 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<3>
+transform 1 0 36984 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<4>
+transform 1 0 41584 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<5>
+transform 1 0 46184 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<6>
+transform 1 0 50784 0 1 41528
+box -184 -128 1784 928
+use REYATR_PCH_4C5F0 xfill_p_cc<7>
+transform 1 0 55384 0 1 41528
+box -184 -128 1784 928
+use REYATR_RES_36C2F0 xad6__xd2<0>
+transform 1 0 184 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xad6__xd2<1>
+transform 1 0 4784 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xd3<0>
+transform 1 0 9384 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xd3<1>
+transform 1 0 13984 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xd3<2>
+transform 1 0 18584 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xd3<3>
+transform 1 0 23184 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xd3<4>
+transform 1 0 27784 0 1 46128
+box -184 -128 3384 928
+use REYATR_RES_36C2F0 xd3<5>
+transform 1 0 32384 0 1 46128
+box -184 -128 3384 928
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ1
+transform 1 0 0 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<0>
+transform 1 0 4600 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<1>
+transform 1 0 9200 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<2>
+transform 1 0 13800 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<3>
+transform 1 0 18400 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<4>
+transform 1 0 23000 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<5>
+transform 1 0 27600 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<6>
+transform 1 0 32200 0 1 50600
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40 xe1__XQ2<7>
+transform 1 0 36800 0 1 50600
+box 0 0 1340 1340
+<< labels >>
+rlabel space -2000 0 -2000 0 0 VDD_1V8
+port 1 nsew signal bidirectional
+rlabel space -2000 800 -2000 800 0 LPI
+port 2 nsew signal bidirectional
+rlabel space -2000 1600 -2000 1600 0 IBP_1U<3>
+port 3 nsew signal bidirectional
+rlabel space -2000 2400 -2000 2400 0 IBP_1U<2>
+port 4 nsew signal bidirectional
+rlabel space -2000 3200 -2000 3200 0 IBP_1U<1>
+port 5 nsew signal bidirectional
+rlabel space -2000 4000 -2000 4000 0 IBP_1U<0>
+port 6 nsew signal bidirectional
+rlabel space -2000 4800 -2000 4800 0 LPO
+port 7 nsew signal bidirectional
+rlabel space -2000 5600 -2000 5600 0 VD1
+port 8 nsew signal bidirectional
+rlabel space -2000 6400 -2000 6400 0 PWRUP_1V8
+port 9 nsew signal bidirectional
+rlabel space -2000 7200 -2000 7200 0 VSS
+port 10 nsew signal bidirectional
+rlabel space -2000 8000 -2000 8000 0 PWRUP_N_1V8
+port 11 nsew signal bidirectional
+<< end >>
